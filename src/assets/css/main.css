@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  src: url("../fonts/DIN Next LT Arabic/DINNextLTArabic-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  src: url("../fonts/DIN Next LT Arabic/DINNextLTArabic-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  src: url("../fonts/DIN Next LT Arabic/DINNextLTArabic-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ghanem";
+  src: url("../fonts/Ghanem/ghanem.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ghanem";
+  src: url("../fonts/Ghanem/ghanem-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ghanem";
+  src: url("../fonts/Ghanem/ghanem-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@theme {
+  --main-font: "DIN Next LT Arabic";
+  --header-fonts: "Ghanem";
+
+  /* Brand Colors */
+  --color-primary: #016938; /* Green/500 */
+  --color-primary-dark: #004525; /* Green/600 */
+  --color-secondary: #f17c2d; /* Orange/500 */
+  --color-green-400: #c5d7bd; /* Neutral Colors */
+  --color-natural-100: #ffffff;
+  --color-natural-300: #f4f4f4;
+  --color-natural-500: #8d8d8d;
+  --color-natural-700: #323232;
+  --color-natural-800: #0e0e0e;
+  --color-orange-500: #f17c2d;
+}
+
+body {
+  font-family: var(--main-font);
+  background-color: var(--color-natural-100);
+  color: var(--color-natural-800);
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--header-fonts);
+}
+
+/* Custom Utilities */
+.hero-overlay {
+  background: linear-gradient(
+    0deg,
+    rgba(1, 105, 56, 0.8),
+    rgba(1, 105, 56, 0.8)
+  );
+}
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+  .header-line {
+    @apply w-px h-[87px] bg-natural-100 rounded-full ml-4 hidden lg:block relative;
+    &::after,
+    &::before {
+      @apply content-[''] size-2 bg-natural-100 rounded-full absolute left-1/2 -translate-x-1/2;
+    }
+    &::before {
+      @apply top-full;
+    }
+    &::after {
+      @apply bottom-full;
+    }
+  }
+}
