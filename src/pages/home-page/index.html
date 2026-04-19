@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ar" dir="ltr">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,8 +8,10 @@
       rel="preload"
       href="../../assets/images/home/hero-image.webp"
       as="image"
+      fetchpriority="high"
       type="image/webp"
     />
+
     <style>
       :root {
         --loader-bg: #ffffff;
@@ -18,7 +20,6 @@
         --loader-transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      /* Base overlay */
       #loading-screen {
         position: fixed;
         inset: 0;
@@ -44,7 +45,6 @@
         pointer-events: none;
       }
 
-      /* Modern Minimalist Loader */
       .loader-container {
         position: relative;
         width: 120px;
@@ -87,7 +87,6 @@
         animation-delay: -0.15s;
       }
 
-      /* Subtle pulse for brand impact */
       .loader-brand {
         font-family: inherit;
         color: var(--loader-primary);
@@ -125,7 +124,6 @@
         }
       }
 
-      /* Progress bar at top - high precision feeling */
       .loader-progress-track {
         position: absolute;
         top: 0;
@@ -223,95 +221,90 @@
         --color-natural-800: #0e0e0e;
       }
 
-      @layer base {
-        *,
-        :after,
-        :before {
-          box-sizing: border-box;
-          border: 0 solid;
-          margin: 0;
-          padding: 0;
-        }
-        html,
-        :host {
-          -webkit-text-size-adjust: 100%;
-          tab-size: 4;
-          line-height: 1.5;
-          font-family: var(
-            --default-font-family,
-            ui-sans-serif,
-            system-ui,
-            sans-serif,
-            "Apple Color Emoji",
-            "Segoe UI Emoji",
-            "Segoe UI Symbol",
-            "Noto Color Emoji"
-          );
-          font-feature-settings: var(--default-font-feature-settings, normal);
-          font-variation-settings: var(
-            --default-font-variation-settings,
-            normal
-          );
-          -webkit-tap-highlight-color: transparent;
-        }
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-          font-size: inherit;
-          font-weight: inherit;
-        }
-        a {
-          color: inherit;
-          -webkit-text-decoration: inherit;
-          -webkit-text-decoration: inherit;
-          -webkit-text-decoration: inherit;
-          text-decoration: inherit;
-        }
-        img,
-        svg {
-          vertical-align: middle;
+      *,
+      :after,
+      :before {
+        box-sizing: border-box;
+        border: 0 solid;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      :host {
+        -webkit-text-size-adjust: 100%;
+        tab-size: 4;
+        line-height: 1.5;
+        font-family: var(
+          --default-font-family,
+          ui-sans-serif,
+          system-ui,
+          sans-serif,
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol",
+          "Noto Color Emoji"
+        );
+        font-feature-settings: var(--default-font-feature-settings, normal);
+        font-variation-settings: var(--default-font-variation-settings, normal);
+        -webkit-tap-highlight-color: transparent;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: inherit;
+        font-weight: inherit;
+      }
+      a {
+        color: inherit;
+        -webkit-text-decoration: inherit;
+        -webkit-text-decoration: inherit;
+        -webkit-text-decoration: inherit;
+        text-decoration: inherit;
+      }
+      img,
+      svg {
+        vertical-align: middle;
+        display: block;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .header-line {
+        margin-left: calc(var(--spacing) * 4);
+        background-color: var(--color-natural-100);
+        border-radius: 3.40282e38px;
+        width: 1px;
+        height: 87px;
+        display: none;
+        position: relative;
+      }
+      @media (min-width: 64rem) {
+        .header-line {
           display: block;
         }
-        img {
-          max-width: 100%;
-          height: auto;
-        }
-        .header-line {
-          margin-left: calc(var(--spacing) * 4);
-          background-color: var(--color-natural-100);
-          border-radius: 3.40282e38px;
-          width: 1px;
-          height: 87px;
-          display: none;
-          position: relative;
-        }
-        @media (min-width: 64rem) {
-          .header-line {
-            display: block;
-          }
-        }
-        .header-line:after,
-        .header-line:before {
-          width: calc(var(--spacing) * 2);
-          height: calc(var(--spacing) * 2);
-          --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
-          translate: var(--tw-translate-x) var(--tw-translate-y);
-          background-color: var(--color-natural-100);
-          --tw-content: "";
-          content: var(--tw-content);
-          border-radius: 3.40282e38px;
-          position: absolute;
-          left: 50%;
-        }
-        .header-line:before {
-          top: 100%;
-        }
-        .header-line:after {
-          bottom: 100%;
-        }
+      }
+      .header-line:after,
+      .header-line:before {
+        width: calc(var(--spacing) * 2);
+        height: calc(var(--spacing) * 2);
+        --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+        background-color: var(--color-natural-100);
+        --tw-content: "";
+        content: var(--tw-content);
+        border-radius: 3.40282e38px;
+        position: absolute;
+        left: 50%;
+      }
+      .header-line:before {
+        top: 100%;
+      }
+      .header-line:after {
+        bottom: 100%;
       }
 
       .invisible {
@@ -1150,179 +1143,7 @@
           var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
           var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
       }
-      .transition-all {
-        transition-property: all;
-        transition-timing-function: var(
-          --tw-ease,
-          var(--default-transition-timing-function)
-        );
-        transition-duration: var(
-          --tw-duration,
-          var(--default-transition-duration)
-        );
-      }
-      .transition-colors {
-        transition-property:
-          color, background-color, border-color, outline-color,
-          text-decoration-color, fill, stroke, --tw-gradient-from,
-          --tw-gradient-via, --tw-gradient-to;
-        transition-timing-function: var(
-          --tw-ease,
-          var(--default-transition-timing-function)
-        );
-        transition-duration: var(
-          --tw-duration,
-          var(--default-transition-duration)
-        );
-      }
-      .transition-opacity {
-        transition-property: opacity;
-        transition-timing-function: var(
-          --tw-ease,
-          var(--default-transition-timing-function)
-        );
-        transition-duration: var(
-          --tw-duration,
-          var(--default-transition-duration)
-        );
-      }
-      .transition-transform {
-        transition-property: transform, translate, scale, rotate;
-        transition-timing-function: var(
-          --tw-ease,
-          var(--default-transition-timing-function)
-        );
-        transition-duration: var(
-          --tw-duration,
-          var(--default-transition-duration)
-        );
-      }
-      .duration-300 {
-        --tw-duration: 0.3s;
-        transition-duration: 0.3s;
-      }
-      .duration-500 {
-        --tw-duration: 0.5s;
-        transition-duration: 0.5s;
-      }
-      .will-change-\[transform\,opacity\] {
-        will-change: transform, opacity;
-      }
-      @media (hover: hover) {
-        .group-hover\:-translate-x-1:is(:where(.group):hover *) {
-          --tw-translate-x: calc(var(--spacing) * -1);
-          translate: var(--tw-translate-x) var(--tw-translate-y);
-        }
-        .group-hover\:-translate-y-1:is(:where(.group):hover *) {
-          --tw-translate-y: calc(var(--spacing) * -1);
-          translate: var(--tw-translate-x) var(--tw-translate-y);
-        }
-        .group-hover\:scale-110:is(:where(.group):hover *) {
-          --tw-scale-x: 110%;
-          --tw-scale-y: 110%;
-          --tw-scale-z: 110%;
-          scale: var(--tw-scale-x) var(--tw-scale-y);
-        }
-        .hover\:translate-x-0:hover {
-          --tw-translate-x: calc(var(--spacing) * 0);
-          translate: var(--tw-translate-x) var(--tw-translate-y);
-        }
-        .hover\:-translate-y-2:hover {
-          --tw-translate-y: calc(var(--spacing) * -2);
-          translate: var(--tw-translate-x) var(--tw-translate-y);
-        }
-        .hover\:scale-105:hover {
-          --tw-scale-x: 105%;
-          --tw-scale-y: 105%;
-          --tw-scale-z: 105%;
-          scale: var(--tw-scale-x) var(--tw-scale-y);
-        }
-        .hover\:scale-110:hover {
-          --tw-scale-x: 110%;
-          --tw-scale-y: 110%;
-          --tw-scale-z: 110%;
-          scale: var(--tw-scale-x) var(--tw-scale-y);
-        }
-        .hover\:bg-natural-300:hover {
-          background-color: var(--color-natural-300);
-        }
-        .hover\:bg-secondary:hover {
-          background-color: var(--color-secondary);
-        }
-        .hover\:bg-secondary\/50:hover {
-          background-color: #f17c2d80;
-        }
-        @supports (color: color-mix(in lab, red, red)) {
-          .hover\:bg-secondary\/50:hover {
-            background-color: color-mix(
-              in oklab,
-              var(--color-secondary) 50%,
-              transparent
-            );
-          }
-        }
-        .hover\:bg-secondary\/80:hover {
-          background-color: #f17c2dcc;
-        }
-        @supports (color: color-mix(in lab, red, red)) {
-          .hover\:bg-secondary\/80:hover {
-            background-color: color-mix(
-              in oklab,
-              var(--color-secondary) 80%,
-              transparent
-            );
-          }
-        }
-        .hover\:bg-secondary\/90:hover {
-          background-color: #f17c2de6;
-        }
-        @supports (color: color-mix(in lab, red, red)) {
-          .hover\:bg-secondary\/90:hover {
-            background-color: color-mix(
-              in oklab,
-              var(--color-secondary) 90%,
-              transparent
-            );
-          }
-        }
-        .hover\:text-natural-100\/70:hover {
-          color: #ffffffb3;
-        }
-        @supports (color: color-mix(in lab, red, red)) {
-          .hover\:text-natural-100\/70:hover {
-            color: color-mix(
-              in oklab,
-              var(--color-natural-100) 70%,
-              transparent
-            );
-          }
-        }
-        .hover\:text-primary:hover {
-          color: var(--color-primary);
-        }
-        .hover\:text-secondary:hover {
-          color: var(--color-secondary);
-        }
-        .hover\:text-white:hover {
-          color: var(--color-white);
-        }
-        .hover\:underline:hover {
-          text-decoration-line: underline;
-        }
-        .hover\:shadow-xl:hover {
-          --tw-shadow:
-            0 20px 25px -5px var(--tw-shadow-color, #0000001a),
-            0 8px 10px -6px var(--tw-shadow-color, #0000001a);
-          box-shadow:
-            var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
-            var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-            var(--tw-shadow);
-        }
-      }
-      .focus\:outline-none:focus {
-        --tw-outline-style: none;
-        outline-style: none;
-      }
+
       @media (min-width: 48rem) {
         .md\:grid-cols-2 {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1383,16 +1204,6 @@
         --tw-scale-x: -1;
         scale: var(--tw-scale-x) var(--tw-scale-y);
       }
-      @media (hover: hover) {
-        .ltr\:group-hover\:translate-x-1:where(
-            :dir(ltr),
-            [dir="ltr"],
-            [dir="ltr"] *
-          ):is(:where(.group):hover *) {
-          --tw-translate-x: calc(var(--spacing) * 1);
-          translate: var(--tw-translate-x) var(--tw-translate-y);
-        }
-      }
       .\[\&_li\]\:py-3 li {
         padding-block: calc(var(--spacing) * 3);
       }
@@ -1400,7 +1211,7 @@
       @font-face {
         font-family: DIN Next LT Arabic;
         font-display: swap;
-        src: url("../../fonts/DIN Next LT Arabic/DINNextLTArabic-Regular.woff2")
+        src: url("../../assets/fonts/DIN Next LT Arabic/DINNextLTArabic-Regular.woff2")
           format("woff2");
         font-weight: 400;
         font-style: normal;
@@ -1408,7 +1219,7 @@
       @font-face {
         font-family: DIN Next LT Arabic;
         font-display: swap;
-        src: url("../../fonts/DIN Next LT Arabic/DINNextLTArabic-Medium.woff2")
+        src: url("../../assets/fonts/DIN Next LT Arabic/DINNextLTArabic-Medium.woff2")
           format("woff2");
         font-weight: 500;
         font-style: normal;
@@ -1416,7 +1227,7 @@
       @font-face {
         font-family: DIN Next LT Arabic;
         font-display: swap;
-        src: url("../../fonts/DIN Next LT Arabic/DINNextLTArabic-Bold.woff2")
+        src: url("../../assets/fonts/DIN Next LT Arabic/DINNextLTArabic-Bold.woff2")
           format("woff2");
         font-weight: 700;
         font-style: normal;
@@ -1424,21 +1235,22 @@
       @font-face {
         font-family: Ghanem;
         font-display: swap;
-        src: url("../../fonts/Ghanem/ghanem.woff2") format("woff2");
+        src: url("../../assets/fonts/Ghanem/ghanem.woff2") format("woff2");
         font-weight: 400;
         font-style: normal;
       }
       @font-face {
         font-family: Ghanem;
         font-display: swap;
-        src: url("../../fonts/Ghanem/ghanem-Medium.woff2") format("woff2");
+        src: url("../../assets//fonts/Ghanem/ghanem-Medium.woff2")
+          format("woff2");
         font-weight: 500;
         font-style: normal;
       }
       @font-face {
         font-family: Ghanem;
         font-display: swap;
-        src: url("../../fonts/Ghanem/ghanem-bold.woff2") format("woff2");
+        src: url("../../assets/fonts/Ghanem/ghanem-bold.woff2") format("woff2");
         font-weight: 700;
         font-style: normal;
       }
@@ -1468,7 +1280,6 @@
     />
   </head>
   <body class="bg-natural-100 font-main">
-    <!-- Modern Loading Screen -->
     <div
       id="loading-screen"
       role="progressbar"
@@ -1486,7 +1297,6 @@
       </div>
       <div class="loader-brand">KSA Students <span>2030</span></div>
     </div>
-    <!-- Header Section -->
     <header class="fixed top-0 left-0 w-full z-50">
       <div
         class="bg-secondary rounded-b-[44px] px-6 lg:px-20 py-3 flex items-center justify-between mx-auto shadow-lg transition-all duration-300 hover:shadow-xl"
@@ -1503,8 +1313,6 @@
             />
           </div>
         </div>
-
-        <!-- Mobile Hamburger -->
         <button
           id="mobile-menu-toggle"
           class="xl:hidden text-natural-100 p-2 focus:outline-none"
@@ -1542,7 +1350,8 @@
           <a href="#" class="text-natural-100 text-xl hover:underline"
             >تسجيل دخول</a
           >
-          <button
+          <a
+            href="#"
             class="bg-natural-100 text-secondary px-6 py-2 rounded-lg text-xl flex items-center gap-2 group transition-all hover:bg-natural-300"
           >
             اتصل بنا
@@ -1558,11 +1367,10 @@
                 alt="Arrow"
               />
             </span>
-          </button>
+          </a>
         </div>
       </div>
 
-      <!-- Sub White Bar (Desktop Only) -->
       <div
         class="hidden xl:flex bg-natural-100 rounded-b-[44px] px-8 py-4 container items-center justify-center mx-auto shadow-md mt-[-2px] z-[-1]"
       >
@@ -1584,7 +1392,6 @@
                 alt="Chevron"
                 class="w-4 h-4 transition-transform duration-300"
               />
-              <!-- Dropdown Menu -->
               <div
                 class="dropdown-menu absolute top-full right-0 mt-4 w-64 bg-white rounded-2xl shadow-2xl p-6 opacity-0 invisible translate-y-4 transition-all duration-300 z-50 border border-natural-300"
               >
@@ -1802,17 +1609,14 @@
       </div>
     </header>
 
-    <!-- Mobile Sidenav -->
     <div
       id="mobile-sidenav"
       class="fixed inset-0 z-60 invisible transition-all duration-300"
     >
-      <!-- Overlay -->
       <div
         id="sidenav-overlay"
         class="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300"
       ></div>
-      <!-- Menu Content -->
       <div
         id="sidenav-content"
         class="absolute top-0 right-0 w-[80%] max-w-[320px] h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col pt-20 pb-8 px-6 overflow-y-auto"
@@ -1936,9 +1740,7 @@
       </div>
     </div>
 
-    <!-- Hero Section -->
     <section class="relative min-h-[764px] hero-bg-placeholder overflow-clip">
-      <!-- Dark Green Overlay -->
       <div class="absolute inset-0 hero-overlay z-10"></div>
       <img
         src="../../assets/images/home/hero-bg-image.webp"
@@ -1950,7 +1752,6 @@
         role="presentation"
         class="absolute inset-0 w-full h-full object-cover aspect-3/2"
       />
-      <!-- Hero Content -->
       <div
         class="relative z-10 container mx-auto px-8 pt-[180px] pb-20 flex flex-col-reverse lg:flex-row gap-[72px] justify-center items-center text-center lg:text-right"
       >
@@ -1987,7 +1788,789 @@
           />
         </div>
       </div>
+      <img
+        src="../../assets/images/home/map.webp"
+        alt=""
+        role="presentation"
+        class="absolute bottom-0 inset-s-0 z-20"
+        width="636"
+        height="128"
+        data-hide-mobile
+      />
     </section>
+    <!-- About Us Section -->
+    <section class="py-24 bg-natural-100 relative overflow-hidden">
+      <img
+        src="../../assets/images/about/i18n-bg.svg"
+        alt=""
+        role="presentation"
+        width="389"
+        height="389"
+        decoding="async"
+        loading="lazy"
+        data-hide-mobile
+        class="absolute right-0 top-0 pointer-events-none transform -translate-y-1/4"
+      />
+      <div
+        class="container mx-auto px-8 grid grid-cols-1 lg:grid-cols-2! items-center gap-16 relative z-10"
+      >
+        <div class="text-right">
+          <div class="inline-flex items-center gap-2 mb-4">
+            <div class="relative w-8 h-8 flex items-center justify-center">
+              <div class="absolute size-3.5 bg-primary rotate-45"></div>
+              <div
+                class="absolute size-2.5 bg-secondary rotate-45 transform -translate-x-2 top-1/2 -translate-y-1/2"
+              ></div>
+            </div>
+            <h2
+              class="text-4xl font-header font-medium text-natural-800 tracking-wider"
+            >
+              نبذة عنا
+            </h2>
+          </div>
+
+          <p
+            class="text-[28px] font-main text-natural-700 leading-relaxed mb-12"
+          >
+            نقدّم دعمًا وإرشادًا متخصصًا في رحلتك التعليمية، مع متابعة دقيقة
+            وخدمات موثوقة تساعدك على التقديم بثقة والبدء في تجربة دراسية سلسة
+            وميسّرة
+          </p>
+
+          <div
+            class="grid divide-x-2! divide-green-500! grid-cols-3 [&_div]:px-8! mb-12"
+          >
+            <div>
+              <h3 class="text-[28px]! text-natural-800">+150</h3>
+              <p class="text-2xl! text-natural-500">جامعات شريكة</p>
+            </div>
+            <div>
+              <h3 class="text-[28px]! text-natural-800">+1000</h3>
+              <p class="text-2xl! text-natural-500">طالب</p>
+            </div>
+            <div>
+              <h3 class="text-[28px]! text-natural-800">+5</h3>
+              <p class="text-2xl! text-natural-500">سنين الخبرة</p>
+            </div>
+          </div>
+
+          <a
+            href="#"
+            class="bg-secondary text-natural-100 px-6 py-2.5 rounded-lg text-xl flex w-fit items-center gap-2 group transition-all hover:bg-secondary/90"
+          >
+            معرفة المزيد
+            <span
+              class="transform group-hover:-translate-x-1 ltr:group-hover:translate-x-1 transition-transform ltr:scale-x-[-1]"
+            >
+              <img
+                src="../../assets/images/shared/icons/arrow-cta-white.svg"
+                width="20"
+                height="20"
+                loading="lazy"
+                decoding="async"
+                alt="Arrow"
+              />
+            </span>
+          </a>
+        </div>
+        <div class="relative">
+          <div class="relative z-10">
+            <img
+              src="../../assets/images/about/about-image.webp"
+              alt="Students"
+              class="object-cover"
+              width="771"
+              loading="lazy"
+              decoding="async"
+              height="658"
+            />
+          </div>
+
+          <div
+            class="absolute top-[1%] w-[20%] inset-s-[10%] animate-bounce transition-all duration-300 z-10"
+          >
+            <img
+              src="../../assets/images/about/pas-animataed.webp"
+              alt=""
+              role="presentation"
+              loading="lazy"
+              decoding="async"
+              width="154"
+              height="147"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 w-[30%] inset-e-[10%] animate-bounce transition-all duration-300 z-10"
+          >
+            <img
+              src="../../assets/images/about/airplan.webp"
+              alt=""
+              role="presentation"
+              loading="lazy"
+              decoding="async"
+              width="244"
+              height="77"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- study outside -->
+    <section class="py-24 bg-natural-100 relative overflow-hidden">
+      <img
+        src="../../assets/images/home/study-outside-bg.webp"
+        width="1440"
+        height="960"
+        alt=""
+        loading="lazy"
+        decoding="async"
+        role="presentation"
+        class="absolute inset-0 w-full h-full object-cover aspect-3/2 mix-blend-plus-darker bg-primary"
+      />
+      <div
+        class="container mx-auto px-8 grid grid-cols-1 lg:grid-cols-2! items-center gap-16 relative z-10"
+      >
+        <div>
+          <img
+            src="../../assets/images/home/country-plan.webp"
+            alt="Students"
+            class="object-cover"
+            width="485"
+            loading="lazy"
+            decoding="async"
+            height="477"
+          />
+        </div>
+        <div>
+          <div class="inline-flex items-center gap-2 mb-4">
+            <div class="relative w-8 h-8 flex items-center justify-center">
+              <div class="absolute size-3.5 bg-primary rotate-45"></div>
+              <div
+                class="absolute size-2.5 bg-secondary rotate-45 transform -translate-x-2 top-1/2 -translate-y-1/2"
+              ></div>
+            </div>
+            <h2
+              class="text-4xl font-header font-medium text-natural-800 tracking-wider"
+            >
+              نبذة عنا
+            </h2>
+          </div>
+
+          <p
+            class="text-[28px] font-main text-natural-700 leading-relaxed mb-12"
+          >
+            نقدّم دعمًا وإرشادًا متخصصًا في رحلتك التعليمية، مع متابعة دقيقة
+            وخدمات موثوقة تساعدك على التقديم بثقة والبدء في تجربة دراسية سلسة
+            وميسّرة
+          </p>
+          <a
+            href="#"
+            class="bg-secondary text-natural-100 px-6 py-2.5 rounded-lg text-xl flex w-fit items-center gap-2 group transition-all hover:bg-secondary/90"
+          >
+            معرفة المزيد
+            <span
+              class="transform group-hover:-translate-x-1 ltr:group-hover:translate-x-1 transition-transform ltr:scale-x-[-1]"
+            >
+              <img
+                src="../../assets/images/shared/icons/arrow-cta-white.svg"
+                width="20"
+                height="20"
+                loading="lazy"
+                decoding="async"
+                alt="Arrow"
+              />
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specializations Section -->
+    <!-- <section class="py-24 bg-primary relative overflow-hidden text-natural-100">
+      <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <svg
+          class="w-full h-full"
+          viewBox="0 0 1440 600"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 0H1440V600H0V0Z" fill="url(#hero-gradient)" />
+          <defs>
+            <radialGradient
+              id="hero-gradient"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(720 300) rotate(90) scale(300 720)"
+            >
+              <stop stop-color="white" />
+              <stop offset="1" stop-color="white" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="container mx-auto px-8 relative z-10 text-right">
+        <div class="flex flex-col items-center mb-16 text-center">
+          <div class="inline-flex items-center gap-4 mb-4">
+            <h2
+              class="text-4xl font-header font-bold text-white tracking-wider"
+            >
+              التخصصـــــــات
+            </h2>
+            <div
+              class="relative w-8 h-8 flex items-center justify-center -scale-y-100 rotate-180"
+            >
+              <div class="absolute w-4 h-4 bg-primary-dark rotate-45"></div>
+              <div
+                class="absolute w-3 h-3 bg-secondary rotate-45 transform translate-x-2 -translate-y-1"
+              ></div>
+            </div>
+          </div>
+          <p class="text-2xl font-main text-white/80">
+            اكتشف مئات التخصصات الجامعية
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div
+            class="bg-natural-100 border-t-4 border-secondary rounded-lg p-4 pb-8 flex flex-col items-end gap-2 relative shadow-2xl hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div
+              class="absolute -top-1 right-4 w-[90px] h-[132px] bg-secondary rounded-b-full flex items-center justify-center p-2 pt-10"
+            >
+              <div
+                class="w-16 h-16 bg-natural-300 rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-stethoscope text-2xl text-secondary"></i>
+              </div>
+            </div>
+
+            <div class="h-10 flex items-center gap-4 w-full">
+              <div class="h-px bg-natural-300 grow rounded-full"></div>
+              <span class="text-2xl font-bold text-natural-800">٠١</span>
+            </div>
+
+            <div
+              class="relative w-full h-[187px] rounded-2xl overflow-hidden mt-4"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1576091160550-217359f42f8c?q=80&w=800&auto=format&fit=crop"
+                class="w-full h-full object-cover"
+                alt="Medical"
+              />
+              <div class="absolute inset-0 bg-primary/60"></div>
+              <div class="absolute bottom-4 right-4 text-white">
+                <h3 class="text-2xl font-bold">القطاع الطبي</h3>
+              </div>
+            </div>
+
+            <div
+              class="mt-4 flex items-center gap-2 text-natural-800 cursor-pointer group"
+            >
+              <span class="text-xl underline font-medium">معرفة المزيد</span>
+              <i
+                class="fas fa-arrow-up-right-from-square transform group-hover:-translate-y-1 transition-transform"
+              ></i>
+            </div>
+          </div>
+
+          <div
+            class="bg-natural-100 border-t-4 border-secondary rounded-lg p-4 pb-8 flex flex-col items-end gap-2 relative shadow-2xl hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div
+              class="absolute -top-1 right-4 w-[90px] h-[132px] bg-secondary rounded-b-full flex items-center justify-center p-2 pt-10"
+            >
+              <div
+                class="w-16 h-16 bg-natural-300 rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-drafting-compass text-2xl text-secondary"></i>
+              </div>
+            </div>
+            <div class="h-10 flex items-center gap-4 w-full">
+              <div class="h-px bg-natural-300 grow rounded-full"></div>
+              <span class="text-2xl font-bold text-natural-800">٠٢</span>
+            </div>
+            <div
+              class="relative w-full h-[187px] rounded-2xl overflow-hidden mt-4"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800&auto=format&fit=crop"
+                class="w-full h-full object-cover"
+                alt="Engineering"
+              />
+              <div class="absolute inset-0 bg-primary/60"></div>
+              <div class="absolute bottom-4 right-4 text-white">
+                <h3 class="text-2xl font-bold">القطاع الهندسي</h3>
+              </div>
+            </div>
+            <div
+              class="mt-4 flex items-center gap-2 text-natural-800 cursor-pointer group"
+            >
+              <span class="text-xl underline font-medium">معرفة المزيد</span>
+              <i
+                class="fas fa-arrow-up-right-from-square transform group-hover:-translate-y-1 transition-transform"
+              ></i>
+            </div>
+          </div>
+
+          <div
+            class="bg-natural-100 border-t-4 border-secondary rounded-lg p-4 pb-8 flex flex-col items-end gap-2 relative shadow-2xl hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div
+              class="absolute -top-1 right-4 w-[90px] h-[132px] bg-secondary rounded-b-full flex items-center justify-center p-2 pt-10"
+            >
+              <div
+                class="w-16 h-16 bg-natural-300 rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-mosque text-2xl text-secondary"></i>
+              </div>
+            </div>
+            <div class="h-10 flex items-center gap-4 w-full">
+              <div class="h-px bg-natural-300 grow rounded-full"></div>
+              <span class="text-2xl font-bold text-natural-800">٠٣</span>
+            </div>
+            <div
+              class="relative w-full h-[187px] rounded-2xl overflow-hidden mt-4"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=800&auto=format&fit=crop"
+                class="w-full h-full object-cover"
+                alt="Islamic"
+              />
+              <div class="absolute inset-0 bg-primary/60"></div>
+              <div class="absolute bottom-4 right-4 text-white">
+                <h3 class="text-2xl font-bold">آداب ودراسات إسلامية</h3>
+              </div>
+            </div>
+            <div
+              class="mt-4 flex items-center gap-2 text-natural-800 cursor-pointer group"
+            >
+              <span class="text-xl underline font-medium">معرفة المزيد</span>
+              <i
+                class="fas fa-arrow-up-right-from-square transform group-hover:-translate-y-1 transition-transform"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center gap-12 text-white">
+          <button
+            class="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center hover:bg-secondary/80 transition-all shadow-xl"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <button
+            class="w-12 h-12 rounded-lg bg-secondary/30 flex items-center justify-center hover:bg-secondary/50 transition-all border border-secondary/50"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="absolute -bottom-px left-0 w-full h-32 mountain-wave transform -scale-y-100"
+      ></div>
+    </section> -->
+
+    <!-- <section class="py-24 bg-primary relative overflow-hidden">
+      <div class="container mx-auto px-8 relative z-10">
+        <div class="flex items-center justify-between mb-16">
+          <button
+            class="bg-secondary text-white px-8 py-3 rounded-lg font-bold hover:bg-secondary/90 transition-all shadow-xl"
+          >
+            معرفة المزيد
+          </button>
+          <div class="text-right">
+            <div class="inline-flex items-center gap-4 mb-2">
+              <h2
+                class="text-4xl font-header font-bold text-white tracking-wider"
+              >
+                المقالات وأهم الاخبار
+              </h2>
+              <div
+                class="relative w-8 h-8 flex items-center justify-center -scale-y-100 rotate-180"
+              >
+                <div class="absolute w-4 h-4 bg-primary-dark rotate-45"></div>
+                <div
+                  class="absolute w-3 h-3 bg-secondary rotate-45 transform translate-x-2 -translate-y-1"
+                ></div>
+              </div>
+            </div>
+            <p class="text-2xl font-main text-white/80">ابق على اطلاع</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="group relative bg-transparent rounded-[32px] overflow-hidden shadow-2xl hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div class="h-[400px] w-full">
+              <img
+                src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=800&auto=format&fit=crop"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                alt="Article 1"
+              />
+            </div>
+            <div
+              class="absolute bottom-6 left-6 right-6 bg-natural-100 rounded-3xl p-6 text-right shadow-xl"
+            >
+              <div
+                class="flex items-center justify-end gap-2 text-natural-500 text-sm mb-3"
+              >
+                <span>٢٢ ربيع الأول ١٤٤٧هـ</span>
+                <i class="far fa-calendar"></i>
+              </div>
+              <h3 class="text-xl font-bold text-natural-800 mb-4 leading-snug">
+                كلية الآداب جامعة القاهرة قسم اللغات والترجمة
+              </h3>
+              <div
+                class="flex items-center gap-2 text-secondary cursor-pointer font-bold"
+              >
+                <i class="fas fa-arrow-left"></i>
+                <span>معرفة المزيد</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="group relative bg-transparent rounded-[32px] overflow-hidden shadow-2xl hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div class="h-[400px] w-full">
+              <img
+                src="https://images.unsplash.com/photo-1523050335102-c32c7503122b?q=80&w=800&auto=format&fit=crop"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                alt="Article 2"
+              />
+            </div>
+            <div
+              class="absolute bottom-6 left-6 right-6 bg-natural-100 rounded-3xl p-6 text-right shadow-xl"
+            >
+              <div
+                class="flex items-center justify-end gap-2 text-natural-500 text-sm mb-3"
+              >
+                <span>٢٢ ربيع الأول ١٤٤٧هـ</span>
+                <i class="far fa-calendar"></i>
+              </div>
+              <h3
+                class="text-xl font-bold text-natural-800 mb-4 leading-snug text-wrap"
+              >
+                نظام الساعات المعتمدة في جامعة القاهرة
+              </h3>
+              <div
+                class="flex items-center gap-2 text-secondary cursor-pointer font-bold"
+              >
+                <i class="fas fa-arrow-left"></i>
+                <span>معرفة المزيد</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="group relative bg-transparent rounded-[32px] overflow-hidden shadow-2xl hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div class="h-[400px] w-full">
+              <img
+                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800&auto=format&fit=crop"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                alt="Article 3"
+              />
+            </div>
+            <div
+              class="absolute bottom-6 left-6 right-6 bg-natural-100 rounded-3xl p-6 text-right shadow-xl"
+            >
+              <div
+                class="flex items-center justify-end gap-2 text-natural-500 text-sm mb-3"
+              >
+                <span>٢٢ ربيع الأول ١٤٤٧هـ</span>
+                <i class="far fa-calendar"></i>
+              </div>
+              <h3 class="text-xl font-bold text-natural-800 mb-4 leading-snug">
+                نظام الساعات المعتمدة في جامعة القاهرة
+              </h3>
+              <div
+                class="flex items-center gap-2 text-secondary cursor-pointer font-bold"
+              >
+                <i class="fas fa-arrow-left"></i>
+                <span>معرفة المزيد</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="absolute -bottom-px left-0 w-full h-32 mountain-wave transform translate-y-1"
+      ></div>
+    </section> -->
+
+    <!-- <section class="py-24 bg-natural-300 relative">
+      <div class="container mx-auto px-8">
+        <div class="flex flex-col items-center mb-16 text-center">
+          <div class="inline-flex items-center gap-4 mb-4">
+            <h2
+              class="text-4xl font-header font-bold text-natural-800 tracking-wider"
+            >
+              قالوا عنّا
+            </h2>
+            <div
+              class="relative w-8 h-8 flex items-center justify-center -scale-y-100 rotate-180"
+            >
+              <div class="absolute w-4 h-4 bg-primary rotate-45"></div>
+              <div
+                class="absolute w-3 h-3 bg-secondary rotate-45 transform translate-x-2 -translate-y-1"
+              ></div>
+            </div>
+          </div>
+          <p class="text-2xl font-main text-natural-500">قصص نجاح من طلابنا</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-natural-100 p-8 rounded-[32px] shadow-xl relative border-b-4 border-secondary hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div
+              class="absolute -top-6 right-8 w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white text-3xl shadow-lg"
+            >
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p
+              class="text-xl font-main text-natural-700 italic leading-relaxed mb-8 text-right"
+            >
+              "كانت رحلتي التعليمية ميسرة جداً بفضل الدعم المستمر والتوجيه
+              الصحيح. شكراً لكم على الاحترافية."
+            </p>
+            <div class="flex items-center justify-end gap-4">
+              <div class="text-right">
+                <h4 class="font-bold text-natural-800">أحمد بن محمد</h4>
+                <p class="text-secondary text-sm">طالب هندسة - الرياض</p>
+              </div>
+              <div
+                class="w-12 h-12 rounded-full overflow-hidden bg-natural-300"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-natural-100 p-8 rounded-[32px] shadow-xl relative border-b-4 border-primary hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div
+              class="absolute -top-6 right-8 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white text-3xl shadow-lg"
+            >
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p
+              class="text-xl font-main text-natural-700 italic leading-relaxed mb-8 text-right"
+            >
+              "بفضلكم حصلت على قبول في إحدى أفضل الجامعات المعتمدة. كانت إجراءات
+              التسجيل في غاية السلاسة."
+            </p>
+            <div class="flex items-center justify-end gap-4">
+              <div class="text-right">
+                <h4 class="font-bold text-natural-800">سارة الشمري</h4>
+                <p class="text-primary text-sm">طالبة طب - جدة</p>
+              </div>
+              <div
+                class="w-12 h-12 rounded-full overflow-hidden bg-natural-300"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-natural-100 p-8 rounded-[32px] shadow-xl relative border-b-4 border-secondary hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div
+              class="absolute -top-6 right-8 w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white text-3xl shadow-lg"
+            >
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p
+              class="text-xl font-main text-natural-700 italic leading-relaxed mb-8 text-right"
+            >
+              "خدمة متميزة وفريق عمل رائع. ساعدوني في اختيار التخصص الأنسب
+              لمستقبلي المهني."
+            </p>
+            <div class="flex items-center justify-end gap-4">
+              <div class="text-right">
+                <h4 class="font-bold text-natural-800">خالد القحطاني</h4>
+                <p class="text-secondary text-sm">طالب علوم - الخبر</p>
+              </div>
+              <div
+                class="w-12 h-12 rounded-full overflow-hidden bg-natural-300"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?q=80&w=200&auto=format&fit=crop"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- <footer
+      class="bg-primary-dark text-white pt-24 pb-12 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-5 pointer-events-none">
+        <svg
+          class="w-full h-full"
+          viewBox="0 0 1440 400"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="200" cy="200" r="150" fill="white" />
+          <circle cx="1200" cy="100" r="100" fill="white" />
+        </svg>
+      </div>
+
+      <div class="container mx-auto px-8 relative z-10">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16 text-right"
+        >
+          <div>
+            <div class="flex flex-col items-center lg:items-end gap-4 mb-6">
+              <span class="text-white font-header text-3xl font-bold"
+                >KSA <span class="opacity-80">STUDENTS</span></span
+              >
+              <span class="text-xs tracking-[2px] opacity-60">VISION 2030</span>
+            </div>
+            <p class="text-white/70 leading-relaxed">
+              نحن وجهتكم الأولى للدراسة والتميز في المملكة وخارجها. نقدم حلولاً
+              تعليمية متكاملة لجيل رؤية 2030.
+            </p>
+            <div class="flex items-center justify-end gap-4 mt-8">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-natural-100/10 flex items-center justify-center hover:bg-secondary transition-colors"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-natural-100/10 flex items-center justify-center hover:bg-secondary transition-colors"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-natural-100/10 flex items-center justify-center hover:bg-secondary transition-colors"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-natural-100/10 flex items-center justify-center hover:bg-secondary transition-colors"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold mb-8 border-b border-white/10 pb-4">
+              روابط سريعة
+            </h4>
+            <ul class="space-y-4 text-white/70">
+              <li>
+                <a href="#" class="hover:text-secondary transition-colors"
+                  >الرئيسية</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-secondary transition-colors"
+                  >نبذة عنا</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-secondary transition-colors"
+                  >خدماتنا</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-secondary transition-colors"
+                  >المقالات</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-secondary transition-colors"
+                  >اتصل بنا</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold mb-8 border-b border-white/10 pb-4">
+              التعليم العالي
+            </h4>
+            <ul class="space-y-4 text-white/70">
+              <li>
+                <a href="#" class="hover:text-secondary transition-colors"
+                  >الجامعات المعتمدة</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-secondary transition-colors"
+                  >التخصصات الدراسية</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-secondary transition-colors"
+                  >الدرجات العلمية</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-secondary transition-colors"
+                  >الوجهات الدراسية</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold mb-8 border-b border-white/10 pb-4">
+              تواصل معنا
+            </h4>
+            <ul class="space-y-6 text-white/70">
+              <li class="flex items-center justify-end gap-3">
+                <span>info@ksastudents2030.com</span>
+                <i class="fas fa-envelope text-secondary"></i>
+              </li>
+              <li class="flex items-center justify-end gap-3">
+                <span>+966 500 000 000</span>
+                <i class="fas fa-phone text-secondary"></i>
+              </li>
+              <li class="flex items-center justify-end gap-3">
+                <span>الرياض، المملكة العربية السعودية</span>
+                <i class="fas fa-map-marker-alt text-secondary"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-white/50 text-sm"
+        >
+          <p>© 2026 KSA Students 2030. جميع الحقوق محفوظة.</p>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-white transition-colors"
+              >سياسة الخصوصية</a
+            >
+            <a href="#" class="hover:text-white transition-colors"
+              >الشروط والأحكام</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer> -->
     <div
       id="social-bar"
       class="fixed flex items-center gap-7 inset-e-6 top-1/2 -translate-y-1/2 z-20 transition-all duration-500"
@@ -2100,7 +2683,7 @@
     </div>
     <a
       href="#"
-      class="fixed text-xl flex items-center inset-s-0 top-1/2 -translate-y-1/2 z-20 translate-x-[170px] ltr:translate-x-[-170px] hover:translate-x-0 transition-transform duration-300"
+      class="fixed text-xl flex items-center inset-s-0 top-1/2 -translate-y-1/2 z-20 translate-x-[170px] ltr:translate-x-[-170px] hover:translate-x-0! transition-transform duration-300"
     >
       <p class="bg-natural-100 py-2.5 ps-4 pe-6">رحلتك الدراسيه الان</p>
       <span class="bg-orange-500 -ms-2 text-natural-100 px-6 py-2.5 rounded-xl">
@@ -2108,5 +2691,6 @@
       </span>
     </a>
     <script src="../../assets/js/main.js" defer></script>
+    <script src="../../assets/js/mobile-optmizer.js" defer></script>
   </body>
 </html>
