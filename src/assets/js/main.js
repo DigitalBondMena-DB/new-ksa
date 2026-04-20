@@ -113,14 +113,17 @@ function setSidenavState(isOpen) {
     mobileSidenav.classList.remove("invisible");
     sidenavOverlay.classList.remove("opacity-0");
     sidenavOverlay.classList.add("opacity-100");
-    sidenavContent.classList.remove("translate-x-full");
+    sidenavContent.classList.remove(
+      "translate-x-full",
+      "ltr:-translate-x-full!",
+    );
     sidenavContent.classList.add("translate-x-0");
     document.body.style.overflow = "hidden";
   } else {
     sidenavOverlay.classList.remove("opacity-100");
     sidenavOverlay.classList.add("opacity-0");
     sidenavContent.classList.remove("translate-x-0");
-    sidenavContent.classList.add("translate-x-full");
+    sidenavContent.classList.add("translate-x-full", "ltr:-translate-x-full!");
     setTimeout(() => {
       mobileSidenav.classList.add("invisible");
       document.body.style.overflow = "";

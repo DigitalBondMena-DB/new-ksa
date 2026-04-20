@@ -2,18 +2,20 @@
 
 @theme {
   --main-font: "DIN Next LT Arabic";
-  --header-fonts: "Ghanem";
+  --header-fonts: "Ghanem", sans-serif;
 
   /* Brand Colors */
   --color-primary: #016938; /* Green/500 */
   --color-primary-dark: #004525; /* Green/600 */
   --color-secondary: #f17c2d; /* Orange/500 */
   --color-green-400: #c5d7bd; /* Neutral Colors */
+  --color-green-600: #004525; /* Neutral Colors */
   --color-natural-100: #ffffff;
   --color-natural-300: #f4f4f4;
   --color-natural-500: #8d8d8d;
   --color-natural-700: #323232;
   --color-natural-800: #0e0e0e;
+  --color-orange-300: #fef7f2;
   --color-orange-500: #f17c2d;
 }
 
@@ -30,7 +32,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--header-fonts);
+  font-family: "Ghanem";
 }
 
 /* Custom Utilities */
