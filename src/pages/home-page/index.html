@@ -55,6 +55,10 @@
       .hero-overlay {
         background: linear-gradient(#016938cc, #016938cc);
       }
+      body > section:not(:first-of-type) {
+        content-visibility: auto;
+        contain-intrinsic-size: 1000px;
+      }
     </style>
     <link
       rel="stylesheet"
@@ -579,7 +583,7 @@
               alt="hero image"
               loading="eager"
               fetchpriority="high"
-              decoding="sync"
+              decoding="async"
               width="527"
               height="745"
               class="block"
@@ -593,7 +597,8 @@
         class="absolute bottom-0 inset-s-0 z-20 ltr:scale-x-[-1]"
         width="636"
         height="128"
-        loading="eager"
+        loading="lazy"
+        fetchpriority="low"
         decoding="async"
         data-hide-mobile
       />
