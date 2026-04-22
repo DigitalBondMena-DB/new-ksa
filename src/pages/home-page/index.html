@@ -37,6 +37,12 @@
       />
     </noscript>
     <style>
+      :root {
+        --loader-bg: #ffffff;
+        --loader-primary: #016938;
+        --loader-secondary: #f17c2d;
+        --loader-transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
       #loading-screen {
         position: fixed;
         inset: 0;
@@ -267,7 +273,7 @@
       </div>
 
       <div
-      data-hide-mobile
+        data-hide-mobile
         class="hidden xl:flex bg-natural-100 rounded-b-[44px] px-8 py-4 container items-center justify-center mx-auto shadow-md mt-[-2px] z-[-1]"
       >
         <nav class="w-full">
