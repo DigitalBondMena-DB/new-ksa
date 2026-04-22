@@ -10,9 +10,32 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preload"
+      href="../../assets/fonts/DIN-Next-LT-Arabic/DINNextLTArabic-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="../../assets/fonts/DIN-Next-LT-Arabic/DINNextLTArabic-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link
       rel="preload"
       href="../../assets/images/home/hero-image.webp"
+      as="image"
+      fetchpriority="high"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      href="../../assets/images/home/hero-bg-image.webp"
       as="image"
       fetchpriority="high"
       type="image/webp"
@@ -221,7 +244,7 @@
               src="../../assets/images/shared/main-logo.png"
               width="83"
               height="52"
-              loading="lazy"
+              loading="eager"
               decoding="async"
               alt="Logo"
             />
@@ -236,7 +259,7 @@
             src="../../assets/images/shared/icons/menu-hamburger.svg"
             width="32"
             height="32"
-            loading="lazy"
+            loading="eager"
             decoding="async"
             alt="Menu"
             class="w-8 h-8"
@@ -303,7 +326,7 @@
                 src="../../assets/images/shared/icons/chevron-down.svg"
                 width="16"
                 height="16"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 alt="Chevron"
                 class="w-4 h-4 transition-transform duration-300"
@@ -344,7 +367,7 @@
                 src="../../assets/images/shared/icons/chevron-down.svg"
                 width="16"
                 height="16"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 alt="Chevron"
                 class="w-4 h-4 transition-transform duration-300"
@@ -380,7 +403,7 @@
                 src="../../assets/images/shared/icons/chevron-down.svg"
                 width="16"
                 height="16"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 alt="Chevron"
                 class="w-4 h-4 transition-transform duration-300"
@@ -416,7 +439,7 @@
                 src="../../assets/images/shared/icons/chevron-down.svg"
                 width="16"
                 height="16"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 alt="Chevron"
                 class="w-4 h-4 transition-transform duration-300"
@@ -452,7 +475,7 @@
                 src="../../assets/images/shared/icons/chevron-down.svg"
                 width="16"
                 height="16"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 alt="Chevron"
                 class="w-4 h-4 transition-transform duration-300"
@@ -498,7 +521,7 @@
                 src="../../assets/images/shared/icons/chevron-down.svg"
                 width="16"
                 height="16"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 alt="Chevron"
                 class="w-4 h-4 transition-transform duration-300"
@@ -687,8 +710,9 @@
         width="1440"
         height="960"
         alt=""
-        loading="lazy"
-        decoding="async"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
         role="presentation"
         class="absolute inset-0 w-full h-full object-cover aspect-3/2"
       />
@@ -716,15 +740,16 @@
           </div>
         </div>
         <div>
-          <img
-            src="../../assets/images/home/hero-image.webp"
-            alt="hero image"
-            loading="eager"
-            fetchpriority="high"
-            width="527"
-            height="745"
-            class="block"
-          />
+            <img
+              src="../../assets/images/home/hero-image.webp"
+              alt="hero image"
+              loading="eager"
+              fetchpriority="high"
+              decoding="sync"
+              width="527"
+              height="745"
+              class="block"
+            />
         </div>
       </div>
       <img
@@ -734,6 +759,8 @@
         class="absolute bottom-0 inset-s-0 z-20 ltr:scale-x-[-1]"
         width="636"
         height="128"
+        loading="eager"
+        decoding="async"
         data-hide-mobile
       />
     </section>

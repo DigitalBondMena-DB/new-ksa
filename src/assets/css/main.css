@@ -77,4 +77,11 @@ h6 {
       @apply bottom-full;
     }
   }
+
+  /* Prevent CLS for JS-hidden elements */
+  @media (max-width: 1023px) {
+    [data-hide-mobile] {
+      display: none !important;
+    }
+  }
 }
