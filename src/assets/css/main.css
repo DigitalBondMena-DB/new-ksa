@@ -17,6 +17,7 @@
   --color-natural-700: #323232;
   --color-natural-800: #0e0e0e;
   --color-orange-300: #fef7f2;
+  --color-orange-400: #fdf5ef;
   --color-orange-500: #f17c2d;
 }
 
@@ -59,7 +60,11 @@ h6 {
     }
   }
   .container {
-    @apply px-4!;
+    @apply px-4! mx-auto;
+  }
+  .section-content-visibility {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
   }
   button {
     @apply cursor-pointer;
