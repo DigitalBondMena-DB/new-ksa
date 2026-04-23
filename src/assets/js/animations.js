@@ -70,4 +70,4 @@ const Animations = (() => {
   };
 })();
 
-window.Animations = Animations;
+Animations.init();
