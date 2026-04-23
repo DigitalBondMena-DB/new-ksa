@@ -72,21 +72,9 @@
       <div
         class="bg-secondary rounded-b-[44px] px-6 lg:px-20 py-3 flex items-center justify-between mx-auto shadow-lg transition-all duration-300 hover:shadow-xl"
       >
-        <div class="flex items-center gap-4">
-          <div class="flex flex-col items-center">
-            <img
-              src="../../assets/images/shared/main-logo.png"
-              width="83"
-              height="56"
-              loading="eager"
-              decoding="async"
-              alt="Logo"
-            />
-          </div>
-        </div>
         <button
           id="mobile-menu-toggle"
-          class="xl:hidden text-natural-100 p-2 focus:outline-none"
+          class="xl:hidden text-natural-100 p-2"
           aria-label="Toggle Menu"
         >
           <img
@@ -99,12 +87,27 @@
             class="w-8 h-8"
           />
         </button>
+        <a href="./index.html">
+          <img
+            src="../../assets/images/shared/main-logo.png"
+            width="83"
+            height="56"
+            loading="eager"
+            decoding="async"
+            alt="Logo"
+          />
+        </a>
 
-        <nav data-hide-mobile>
-          <ul class="xl:flex items-center gap-18 text-natural-100 text-lg">
-            <li class="">
+        <nav class="hidden xl:block">
+          <ul class="xl:flex items-center gap-14 text-natural-100 text-lg">
+            <li>
               <a href="#" class="hover:text-natural-100/70 transition-colors"
                 >نبذة عنا</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-natural-100/70 transition-colors"
+                >رؤية 2030</a
               >
             </li>
             <li
@@ -140,11 +143,6 @@
             </li>
             <li>
               <a href="#" class="hover:text-natural-100/70 transition-colors"
-                >رؤية 2030</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-natural-100/70 transition-colors"
                 >المقالات</a
               >
             </li>
@@ -158,39 +156,64 @@
                 >شهادات القبول</a
               >
             </li>
+            <li
+              class="relative group/dropdown flex items-center gap-1 cursor-pointer hover:text-natural-100/70 transition-colors py-2"
+              data-dropdown-trigger="learning-ksa"
+            >
+              <span>التعليم في السعودية</span>
+              <img
+                src="../../assets/images/shared/icons/chevron-down-white.svg"
+                width="16"
+                height="16"
+                loading="eager"
+                decoding="async"
+                alt="Chevron"
+                class="w-4 h-4 transition-transform duration-300"
+              />
+              <div
+                class="dropdown-menu absolute top-full right-0 mt-4 w-64 bg-white rounded-2xl shadow-2xl p-6 opacity-0 invisible translate-y-4 transition-all duration-300 z-50 border border-natural-300"
+              >
+                <ul class="flex flex-col gap-4 text-natural-700">
+                  <li>
+                    <a href="#" class="hover:text-primary transition-colors"
+                      >السياحة التعليمية</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:text-primary transition-colors"
+                      >الوجهات الترفيهية</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
           </ul>
         </nav>
 
-        <div class="hidden xl:flex items-center gap-6" data-hide-mobile>
-          <a href="#" class="text-natural-100 text-xl hover:underline"
-            >تسجيل دخول</a
+        <a
+          href="#"
+          class="bg-natural-100 text-secondary px-6 py-2 rounded-lg text-xl flex items-center gap-2 group transition-colors hover:bg-natural-300"
+        >
+          اتصل بنا
+          <span
+            class="transform group-hover:-translate-x-1 ltr:group-hover:translate-x-1 transition-transform ltr:scale-x-[-1]"
           >
-          <a
-            href="#"
-            class="bg-natural-100 text-secondary px-6 py-2 rounded-lg text-xl flex items-center gap-2 group transition-all hover:bg-natural-300"
-          >
-            اتصل بنا
-            <span
-              class="transform group-hover:-translate-x-1 ltr:group-hover:translate-x-1 transition-transform ltr:scale-x-[-1]"
-            >
-              <img
-                src="../../assets/images/shared/icons/arrow-cta.svg"
-                width="20"
-                height="20"
-                loading="lazy"
-                decoding="async"
-                alt="Arrow"
-              />
-            </span>
-          </a>
-        </div>
+            <img
+              src="../../assets/images/shared/icons/arrow-cta.svg"
+              width="20"
+              height="20"
+              loading="lazy"
+              decoding="async"
+              alt="Arrow"
+            />
+          </span>
+        </a>
       </div>
 
       <div
-        data-hide-mobile
-        class="hidden xl:flex bg-natural-100 rounded-b-[44px] px-8 py-4 container items-center justify-center shadow-md mt-[-2px] z-[-1]"
+        class="hidden xl:flex bg-natural-100 rounded-b-[44px] py-4 container items-center justify-center shadow-md mt-[-2px] z-[-1]"
       >
-        <nav class="w-full">
+        <nav class="w-full px-4">
           <ul
             class="flex flex-wrap justify-between w-full items-center text-natural-800 font-medium"
           >
@@ -382,11 +405,6 @@
             <li
               class="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors"
             >
-              <span>التعليم عن بعد</span>
-            </li>
-            <li
-              class="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors"
-            >
               <span>التسجيل فى الجامعات</span>
             </li>
             <li
@@ -420,165 +438,41 @@
                 </ul>
               </div>
             </li>
+            <li
+              class="relative group/dropdown flex items-center gap-1 cursor-pointer hover:text-primary transition-colors py-2"
+              data-dropdown-trigger="more"
+            >
+              <span>المزيد</span>
+              <img
+                src="../../assets/images/shared/icons/chevron-down.svg"
+                width="16"
+                height="16"
+                loading="eager"
+                decoding="async"
+                alt="Chevron"
+                class="w-4 h-4 transition-transform duration-300"
+              />
+              <div
+                class="dropdown-menu absolute top-full right-0 mt-4 w-64 bg-white rounded-2xl shadow-2xl p-6 opacity-0 invisible translate-y-4 transition-all duration-300 z-50 border border-natural-300"
+              >
+                <ul class="flex flex-col gap-4 text-natural-700">
+                  <li>
+                    <a href="#" class="hover:text-primary transition-colors"
+                      >السياحة التعليمية</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="hover:text-primary transition-colors"
+                      >الوجهات الترفيهية</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
-
-    <div
-      id="mobile-sidenav"
-      class="fixed inset-0 z-60 invisible transition-all duration-300"
-    >
-      <div
-        id="sidenav-overlay"
-        class="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300"
-      ></div>
-      <div
-        id="sidenav-content"
-        class="absolute top-0 inset-s-0 w-[80%] max-w-[320px] h-full bg-white shadow-2xl transform translate-x-full ltr:-translate-x-full transition-transform duration-300 flex flex-col pt-20 pb-8 px-6 overflow-y-auto"
-      >
-        <button
-          id="mobile-menu-close"
-          class="absolute top-6 inset-e-6 text-natural-800"
-        >
-          <img
-            src="../../assets/images/shared/icons/menu-close.svg"
-            width="32"
-            height="32"
-            loading="lazy"
-            decoding="async"
-            alt="Close"
-            class="w-8 h-8"
-          />
-        </button>
-
-        <nav class="flex flex-col gap-6 text-xl font-medium text-natural-800">
-          <a
-            href="#"
-            class="hover:text-primary transition-colors border-b border-natural-300 pb-2"
-            >نبذة عنا</a
-          >
-          <a
-            href="#"
-            class="hover:text-primary transition-colors border-b border-natural-300 pb-2"
-            >المقالات</a
-          >
-          <a
-            href="#"
-            class="hover:text-primary transition-colors border-b border-natural-300 pb-2"
-            >المعرض</a
-          >
-          <a
-            href="#"
-            class="hover:text-primary transition-colors border-b border-natural-300 pb-2"
-            >شهادات القبول</a
-          >
-
-          <div class="mobile-dropdown mt-4">
-            <button
-              class="flex items-center justify-between w-full hover:text-primary transition-colors"
-            >
-              <span>الجامعات المعتمدة</span>
-              <img
-                src="../../assets/images/shared/icons/chevron-down.svg"
-                width="16"
-                height="16"
-                loading="lazy"
-                decoding="async"
-                alt="Chevron"
-                class="w-4 h-4 transition-transform duration-300"
-              />
-            </button>
-            <div
-              class="hidden flex-col gap-3 pr-4 mt-3 text-lg text-natural-500"
-            >
-              <a href="#">جامعة الملك سعود</a>
-              <a href="#">جامعة الملك عبدالعزيز</a>
-              <a href="#">جامعة أم القرى</a>
-            </div>
-          </div>
-          <div class="mobile-dropdown">
-            <button
-              class="flex items-center justify-between w-full hover:text-primary transition-colors"
-            >
-              <span>الطلاب العرب</span>
-              <img
-                src="../../assets/images/shared/icons/chevron-down.svg"
-                width="16"
-                height="16"
-                loading="lazy"
-                decoding="async"
-                alt="Chevron"
-                class="w-4 h-4 transition-transform duration-300"
-              />
-            </button>
-            <div
-              class="hidden flex-col gap-3 pr-4 mt-3 text-lg text-natural-500"
-            >
-              <a href="#">خدمات الطلاب</a>
-              <a href="#">المنح الدراسية</a>
-            </div>
-          </div>
-          <a
-            href="#"
-            class="hover:text-primary transition-colors border-b border-natural-300 pb-2"
-            >التخصصات الدراسية</a
-          >
-          <a
-            href="#"
-            class="hover:text-primary transition-colors border-b border-natural-300 pb-2"
-            >الدرجات العلمية</a
-          >
-          <a
-            href="#"
-            class="hover:text-primary transition-colors border-b border-natural-300 pb-2"
-            >الوجهات الدراسية</a
-          >
-          <a
-            href="#"
-            class="hover:text-primary transition-colors border-b border-natural-300 pb-2"
-            >التعليم عن بعد</a
-          >
-          <a
-            href="#"
-            class="hover:text-primary transition-colors border-b border-natural-300 pb-2"
-            >التسجيل فى الجامعات</a
-          >
-          <div class="mobile-dropdown">
-            <button
-              class="flex items-center justify-between w-full hover:text-primary transition-colors"
-            >
-              <span>السياحة</span>
-              <img
-                src="../../assets/images/shared/icons/chevron-down.svg"
-                width="16"
-                height="16"
-                loading="lazy"
-                decoding="async"
-                alt="Chevron"
-                class="w-4 h-4 transition-transform duration-300"
-              />
-            </button>
-            <div
-              class="hidden flex-col gap-3 pr-4 mt-3 text-lg text-natural-500"
-            >
-              <a href="#">السياحة التعليمية</a>
-              <a href="#">الوجهات الترفيهية</a>
-            </div>
-          </div>
-          <a
-            href="#"
-            class="bg-secondary text-white text-center py-3 rounded-lg mt-8"
-            >تسجيل دخول</a
-          >
-          <a
-            href="#"
-            class="border border-secondary text-secondary text-center py-3 rounded-lg"
-            >اتصل بنا</a
-          >
-        </nav>
-      </div>
-    </div>
 
     <section class="relative min-h-[764px] hero-bg-placeholder overflow-clip">
       <div class="absolute inset-0 hero-overlay z-10"></div>
@@ -594,7 +488,7 @@
         class="absolute inset-0 w-full h-full object-cover aspect-3/2"
       />
       <div
-        class="relative z-10 container px-8 pt-[180px] pb-20 flex flex-col-reverse lg:flex-row gap-[72px] justify-center items-center text-center lg:"
+        class="relative z-10 container justify-between px-8 pt-[180px] pb-20 flex flex-col-reverse lg:flex-row gap-[72px] items-center text-center lg:"
       >
         <div class="max-w-4xl space-y-6">
           <div class="flex justify-center lg:justify-end">
@@ -659,7 +553,7 @@
       <div
         class="container px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16 relative z-10"
       >
-        <div>
+        <div data-animate data-animation-direction="start">
           <div class="inline-flex items-center gap-2 mb-4">
             <div class="relative w-8 h-8 flex items-center justify-center">
               <div class="absolute size-3.5 bg-primary rotate-45"></div>
@@ -719,7 +613,7 @@
             </span>
           </a>
         </div>
-        <div class="relative">
+        <div class="relative" data-animate data-animation-direction="end">
           <div class="relative z-10">
             <img
               src="../../assets/images/about/about-image.webp"
@@ -787,7 +681,7 @@
       <div
         class="container px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16 relative z-10"
       >
-        <div>
+        <div data-animate data-animation-direction="start">
           <img
             src="../../assets/images/home/country-plan.webp"
             alt="Students"
@@ -798,7 +692,7 @@
             height="477"
           />
         </div>
-        <div>
+        <div data-animate data-animation-direction="bottom">
           <div class="inline-flex items-center gap-2 mb-4">
             <div class="relative w-8 h-8 flex items-center justify-center">
               <div class="absolute size-3.5 bg-primary rotate-45"></div>
@@ -840,6 +734,8 @@
         class="container px-4 lg:px-8 relative z-10 text-center lg:text-right]"
       >
         <div
+          data-animate
+          data-animation-direction="top"
           class="flex flex-col items-center mb-16 text-center text-natural-800"
         >
           <div class="inline-flex items-center gap-2">
@@ -858,7 +754,11 @@
           </p>
         </div>
 
-        <div class="swiper specializations-swiper overflow-visible pb-10">
+        <div
+          data-animate
+          data-animation-direction="bottom"
+          class="swiper specializations-swiper overflow-visible pb-10"
+        >
           <div class="swiper-wrapper py-3">
             <article class="swiper-slide h-auto">
               <a
@@ -1182,7 +1082,12 @@
       <div
         class="max-w-[1224px] 2xl:max-w-[1480px] mx-auto px-4 relative z-10 text-center lg:text-right]"
       >
-        <div class="flex flex-col items-center mb-16 text-center">
+        <div
+          class="flex flex-col items-center mb-16 text-center"
+          -
+          data-animate
+          data-animation-direction="top"
+        >
           <div class="inline-flex items-center gap-2">
             <div class="relative w-8 h-8 flex items-center justify-center">
               <div class="absolute size-3.5 bg-green-600 rotate-45"></div>
@@ -1203,7 +1108,11 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div
+          data-animate
+          data-animation-direction="bottom"
+          class="grid grid-cols-1 lg:grid-cols-2 gap-20"
+        >
           <div>
             <img
               src="../../assets/images/home/our-service-2.webp"
@@ -1323,8 +1232,16 @@
         data-hide-mobile
         class="absolute opacity-16 inset-0 size-full object-cover object-center pointer-events-none"
       />
-      <div class="container z-10">
-        <div class="flex flex-col items-center mb-16 text-center">
+      <div
+        data-animate
+        data-animation-direction="bottom"
+        class="container z-10"
+      >
+        <div
+          data-animate
+          data-animation-direction="top"
+          class="flex flex-col items-center mb-16 text-center"
+        >
           <div class="inline-flex items-center gap-2">
             <div class="relative w-8 h-8 flex items-center justify-center">
               <div class="absolute size-3.5 bg-primary rotate-45"></div>
@@ -1346,7 +1263,11 @@
         </div>
         <div class="pt-12">
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
-            <div class="z-10 flex flex-col gap-16">
+            <div
+              data-animate
+              data-animation-direction="start"
+              class="z-10 flex flex-col gap-16"
+            >
               <div
                 class="flex flex-col bg-natural-100 rounded-md items-center justify-center gap-6 px-2 py-2.5"
               >
@@ -1386,7 +1307,12 @@
                 </p>
               </div>
             </div>
-            <div class="flex items-center justify-center" data-hide-mobile="">
+            <div
+              data-animate
+              data-animation-direction="bottom"
+              class="flex items-center justify-center"
+              data-hide-mobile=""
+            >
               <img
                 src="../../assets/images/home/students-needs.webp"
                 width="430"
@@ -1396,7 +1322,11 @@
                 decoding="async"
               />
             </div>
-            <div class="z-10 flex flex-col gap-16">
+            <div
+              data-animate
+              data-animation-direction="end"
+              class="z-10 flex flex-col gap-16"
+            >
               <div
                 class="flex flex-col bg-natural-100 rounded-md items-center justify-center gap-6 px-2 py-2.5"
               >
@@ -1455,26 +1385,40 @@
         class="absolute inset-0 size-full object-cover object-center"
       />
 
-      <div class="container px-4 relative z-10]">
-        <div class="flex flex-col mb-16">
-          <div class="inline-flex items-center gap-2">
-            <div class="relative w-8 h-8 flex items-center justify-start">
-              <div class="absolute size-3.5 bg-green-600 rotate-45"></div>
-              <div
-                class="absolute size-2.5 bg-secondary rotate-45 transform -translate-x-2 top-1/2 -translate-y-1/2"
-              ></div>
+      <div
+        class="container px-4 relative z-10]"
+        data-animate
+        data-animation-direction="fade-out"
+      >
+        <div class="flex items-center justify-between mb-16">
+          <div class="flex flex-col">
+            <div class="inline-flex items-center gap-2">
+              <div class="relative w-8 h-8 flex items-center justify-start">
+                <div class="absolute size-3.5 bg-green-600 rotate-45"></div>
+                <div
+                  class="absolute size-2.5 bg-secondary rotate-45 transform -translate-x-2 top-1/2 -translate-y-1/2"
+                ></div>
+              </div>
+              <h2
+                class="text-4xl font-header font-medium text-natural-100 tracking-wider"
+              >
+                المقالات واهم الاخبار
+              </h2>
             </div>
-            <h2
-              class="text-4xl font-header font-medium text-natural-100 tracking-wider"
+            <p
+              class="text-2xl lg:text-[28px] font-main text-natural-100/90 leading-relaxed"
             >
-              المقالات واهم الاخبار
-            </h2>
+              ابق على اطلاع
+            </p>
           </div>
-          <p
-            class="text-2xl lg:text-[28px] font-main text-natural-100/90 leading-relaxed"
+          <a
+            href="#"
+            data-animate
+            data-animation-direction="end"
+            class="bg-secondary text-natural-100 px-6 py-2.5 rounded-lg text-xl w-fit transition-all hover:bg-secondary/90"
           >
-            ابق على اطلاع
-          </p>
+            معرفة المزيد
+          </a>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1690,7 +1634,11 @@
         <div
           class="grid grid-cols-1 lg:grid-cols-12 gap-y-10 items-center mt-12"
         >
-          <div class="flex flex-col gap-8 lg:col-span-4">
+          <div
+            class="flex flex-col gap-8 lg:col-span-4"
+            data-animate
+            data-animation-direction="start"
+          >
             <div class="relative w-fit mx-auto lg:ms-15">
               <img
                 src="../../assets/images/home/ksa-big-icon.webp"
@@ -1751,7 +1699,11 @@
               decoding="async"
             />
           </div>
-          <div class="relative lg:col-span-6">
+          <div
+            class="relative lg:col-span-6"
+            data-animate
+            data-animation-direction="end"
+          >
             <div
               class="swiper stories-swiper overflow-visible overflow-x-clip py-10"
               dir="rtl"
@@ -2004,6 +1956,8 @@
       <div class="container px-4 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div
+            data-animate
+            data-animation-direction="start"
             class="rounded-[40px] relative overflow-hidden text-natural-100 h-[645px]"
           >
             <div class="relative z-10 flex flex-col gap-12 h-full">
@@ -2187,7 +2141,7 @@
               </div>
             </div>
           </div>
-          <div>
+          <div data-animate data-animation-direction="end">
             <form
               id="contactForm"
               class="flex flex-col gap-6 max-w-xl ltr:mr-auto rtl:ml-auto"
@@ -2267,6 +2221,8 @@
     </section>
 
     <footer
+      data-animate
+      data-animation-direction="bottom"
       class="bg-primary-dark pt-[200px] section-content-visibility pb-10 text-white relative overflow-hidden"
     >
       <img
@@ -2589,6 +2545,42 @@
       </div>
     </footer>
     <div
+      id="mobile-sidenav"
+      class="fixed inset-0 z-60 invisible transition-all duration-300"
+    >
+      <div
+        id="sidenav-overlay"
+        class="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300"
+      ></div>
+      <div
+        id="sidenav-content"
+        class="absolute top-0 inset-s-0 w-[80%] max-w-[320px] h-full bg-white shadow-2xl transform translate-x-full ltr:-translate-x-full transition-transform duration-300 flex flex-col pt-20 pb-8 px-6 overflow-y-auto"
+      >
+        <button
+          id="mobile-menu-close"
+          class="absolute top-6 inset-e-6 text-natural-800"
+        >
+          <img
+            src="../../assets/images/shared/icons/menu-close.svg"
+            width="32"
+            height="32"
+            loading="lazy"
+            decoding="async"
+            alt="Close"
+            class="w-8 h-8"
+          />
+        </button>
+
+        <nav class="flex flex-col gap-6 text-xl font-medium text-natural-800">
+          <a
+            href="#"
+            class="border border-secondary text-secondary text-center py-3 rounded-lg"
+            >اتصل بنا</a
+          >
+        </nav>
+      </div>
+    </div>
+    <div
       id="social-bar"
       class="fixed flex items-center gap-7 inset-e-6 top-1/2 -translate-y-1/2 z-20 transition-all duration-500"
     >
@@ -2608,7 +2600,7 @@
       </button>
       <ul
         id="social-list"
-        class="[&_li]:py-3 divide-y-[0.5px] divide-green-400 flex flex-col bg-natural-100 px-3 py-2 rounded-full"
+        class="[&_li]:py-3 divide-y-[0.5px] shadow-[0_2px_20px_0_rgba(0,0,0,0.10)] divide-green-400 flex flex-col bg-natural-100 px-3 py-2 rounded-full"
       >
         <li class="hover:scale-110 transition-transform">
           <a href="#"
@@ -2719,6 +2711,7 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"
       defer
     ></script>
+    <script src="../../assets/js/animations.js" defer></script>
     <script src="../../assets/js/home.js" defer></script>
   </body>
 </html>
