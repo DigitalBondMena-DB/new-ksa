@@ -1,70 +1,83 @@
 const Animations = (() => {
   const e = {
-      threshold: 0.2,
-      rootMargin: "0px 0px -100px 0px",
-      distance: "150px",
-      duration: "1.2s",
-      timing: "cubic-bezier(0.22, 1, 0.36, 1)",
-    },
-    t = (e, t) => {
-      e.forEach((e) => {
-        e.isIntersecting && (o(e.target), t.unobserve(e.target));
-      });
-    },
-    n = (t) => {
-      const n = t.dataset.animationDirection || "start",
-        o = t.dataset.animationDistance || e.distance,
-        a = t.dataset.animationDuration || e.duration,
-        s = t.dataset.animationDelay || "0s";
-      ((t.style.opacity = "0"),
-        (t.style.transition = `transform ${a} ${e.timing}, opacity ${a} ${e.timing}`),
-        (t.style.transitionDelay = s),
-        (t.style.willChange = "transform, opacity"));
-      let i = "0",
-        r = "0";
-      const l =
-        "rtl" === document.dir || "rtl" === document.documentElement.dir;
-      switch (n) {
-        case "start":
-          i = l ? o : `-${o}`;
-          break;
-        case "end":
-          i = l ? `-${o}` : o;
-          break;
-        case "top":
-          r = `-${o}`;
-          break;
-        case "bottom":
-          r = o;
-          break;
-        case "fade-out":
-          ((i = "0"), (r = "0"));
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+    distance: "100px",
+    duration: "0.8s",
+    timing: "cubic-bezier(0.22, 1, 0.36, 1)",
+  };
+
+  const t = (e, t) => {
+    e.forEach((e) => {
+      if (e.isIntersecting) {
+        o(e.target);
+        t.unobserve(e.target);
       }
-      t.style.transform = `translate3d(${i}, ${r}, 0)`;
-    },
-    o = (e) => {
-      ((e.style.opacity = "1"), (e.style.transform = "translate3d(0, 0, 0)"));
-      const t = () => {
-        ((e.style.willChange = "auto"),
-          e.removeEventListener("transitionend", t));
+    });
+  };
+
+  const n = (t) => {
+    const direction = t.dataset.animationDirection || "start";
+    const dist = t.dataset.animationDistance || e.distance;
+    const duration = t.dataset.animationDuration || e.duration;
+    const delay = t.dataset.animationDelay || "0s";
+
+    // Prepare initial state without transition
+    t.style.opacity = "0";
+    t.style.transition = "none";
+    t.style.willChange = "transform, opacity";
+
+    let x = "0", y = "0";
+    const isRTL = document.dir === "rtl" || document.documentElement.dir === "rtl";
+
+    switch (direction) {
+      case "start": x = isRTL ? dist : `-${dist}`; break;
+      case "end": x = isRTL ? `-${dist}` : dist; break;
+      case "top": y = `-${dist}`; break;
+      case "bottom": y = dist; break;
+      case "fade-out": break;
+    }
+
+    t.style.transform = `translate3d(${x}, ${y}, 0)`;
+  };
+
+  const o = (t) => {
+    const duration = t.dataset.animationDuration || e.duration;
+    const delay = t.dataset.animationDelay || "0s";
+    
+    // Add transition and move to final state in the next frame
+    requestAnimationFrame(() => {
+      t.style.transition = `transform ${duration} ${e.timing}, opacity ${duration} ${e.timing}`;
+      t.style.transitionDelay = delay;
+      t.style.opacity = "1";
+      t.style.transform = "translate3d(0, 0, 0)";
+      
+      const onEnd = () => {
+        t.style.willChange = "auto";
+        t.removeEventListener("transitionend", onEnd);
       };
-      e.addEventListener("transitionend", t);
-    };
+      t.addEventListener("transitionend", onEnd);
+    });
+  };
+
   return {
-    init: (o = {}) => {
+    init: (config = {}) => {
       try {
-        const a = { ...e, ...o },
-          s = document.querySelectorAll("[data-animate]");
-        if (0 === s.length) return;
-        const i = new IntersectionObserver(t, {
-          threshold: a.threshold,
-          rootMargin: a.rootMargin,
+        const settings = { ...e, ...config };
+        const elements = document.querySelectorAll("[data-animate]");
+        if (0 === elements.length) return;
+
+        const observer = new IntersectionObserver(t, {
+          threshold: settings.threshold,
+          rootMargin: settings.rootMargin,
         });
-        s.forEach((e) => {
-          (n(e), i.observe(e));
+
+        elements.forEach((el) => {
+          n(el);
+          observer.observe(el);
         });
-      } catch (e) {
-        console.warn("Animations.js: Initialization failed", e);
+      } catch (err) {
+        console.warn("Animations.js: Initialization failed", err);
       }
     },
   };

@@ -13,7 +13,9 @@
   --color-green-600: #004525; /* Neutral Colors */
   --color-natural-100: #ffffff;
   --color-natural-300: #f4f4f4;
+  --color-natural-400: #CECECE;
   --color-natural-500: #8d8d8d;
+  --color-natural-600: #5D5D5D;
   --color-natural-700: #323232;
   --color-natural-800: #0e0e0e;
   --color-orange-300: #fef7f2;
@@ -54,7 +56,9 @@ h6 {
   .container {
     @apply px-4! mx-auto;
   }
-
+  :is(button, a, input):focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
   button {
     @apply cursor-pointer;
   }
@@ -65,10 +69,10 @@ h6 {
   }
 }
 @layer utilities {
-  .flex-center{
+  .flex-center {
     @apply flex items-center justify-center;
   }
-  .main-font{
+  .main-font {
     font-family: var(--main-font) !important;
   }
   .hero-overlay {
