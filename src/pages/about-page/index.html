@@ -528,7 +528,7 @@
       >
         <div data-animate data-animation-direction="start">
           <div class="inline-flex items-center gap-2 mb-4">
-            <div class="relative w-8 h-8 flex items-center justify-center">
+            <div class="relative w-8 h-8 flex-center">
               <div class="absolute size-3.5 bg-primary rotate-45"></div>
               <div
                 class="absolute size-2.5 bg-secondary rotate-45 transform -translate-x-2 top-1/2 -translate-y-1/2"
@@ -542,7 +542,8 @@
           </div>
 
           <p
-            class="text-[28px] font-main text-natural-700 leading-relaxed mb-12"
+            class="text-[28px] font-main text-natural-700 leading-relaxed mb-12 overflow-y-auto custom-scroll"
+            style="max-height: 190px"
           >
             نقدّم دعمًا وإرشادًا متخصصًا في رحلتك التعليمية، مع متابعة دقيقة
             وخدمات موثوقة تساعدك على التقديم بثقة والبدء في تجربة دراسية سلسة
@@ -628,6 +629,105 @@
         </div>
       </div>
     </section>
+    <!-- vision -->
+    <section
+      class="pt-[120px] pb-[120px] lg:pb-[200px] mb-10 section-content-visibility bg-natural-100 relative overflow-hidden"
+    >
+      <img
+        src="../../assets/images/home/study-outside-bg.webp"
+        width="1440"
+        height="960"
+        alt=""
+        loading="lazy"
+        decoding="async"
+        role="presentation"
+        class="absolute inset-0 size-full object-cover object-center aspect-3/2"
+      />
+      <img
+        src="../../assets/images/shared/section-bottom-vector.webp"
+        width="1440"
+        alt=""
+        loading="lazy"
+        decoding="async"
+        role="presentation"
+        class="absolute bottom-0 object-contain inset-x-0 w-full"
+      />
+      <div
+        class="container px-8 grid grid-cols-1 lg:grid-cols-3 items-center gap-16 relative z-10"
+        data-animate
+        data-animation-direction="bottom"
+      >
+        <div class="bg-natural-100 rounded-2xl px-6 pb-10 text-center">
+          <div
+            class="size-[104px] flex-center rounded-full bg-secondary mx-auto mt-[-35px]"
+          >
+            <img
+              src="../../assets/images/shared/icons/our-goal-icon.svg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width="48"
+              height="48"
+              role="presentation"
+            />
+          </div>
+          <h3 class="main-font font-normal text-primary text-[28px]">هدفنا</h3>
+          <p
+            class="text-natural-700 text-[26px] leading-10 overflow-y-auto custom-scroll"
+            style="max-height: 150px"
+          >
+            تمكين الطلاب من الوصول إلى أفضل الفرص التعليمية وتحقيق طموحاتهم.
+          </p>
+        </div>
+        <div class="bg-natural-100 rounded-2xl px-6 pb-10 text-center">
+          <div
+            class="size-[104px] flex-center rounded-full bg-secondary mx-auto mt-[-35px]"
+          >
+            <img
+              src="../../assets/images/shared/icons/our-vision-icon.svg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width="48"
+              height="48"
+              role="presentation"
+            />
+          </div>
+          <h3 class="main-font font-normal text-primary text-[28px]">رؤيتنا</h3>
+          <p
+            class="text-natural-700 text-[26px] leading-10 overflow-y-auto custom-scroll"
+            style="max-height: 150px"
+          >
+            أن نكون الجسر الموثوق الذي يربط الطلاب بأرقى المؤسسات التعليمية
+            عالميًا.
+          </p>
+        </div>
+        <div class="bg-natural-100 rounded-2xl px-6 pb-10 text-center">
+          <div
+            class="size-[104px] flex-center rounded-full bg-secondary mx-auto mt-[-35px]"
+          >
+            <img
+              src="../../assets/images/shared/icons/our-message.svg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width="48"
+              height="48"
+              role="presentation"
+            />
+          </div>
+          <h3 class="main-font font-normal text-primary text-[28px]">
+            رسالتنا
+          </h3>
+          <p
+            class="text-natural-700 text-[26px] leading-10 overflow-y-auto custom-scroll"
+            style="max-height: 150px"
+          >
+            تقديم دعم وإرشاد متكامل يسهّل رحلة الدراسة ويقودك نحو النجاح بثقة.
+          </p>
+        </div>
+      </div>
+    </section>
     <footer
       data-animate
       data-animation-direction="bottom"
@@ -638,7 +738,7 @@
         loading="lazy"
         decoding="async"
         role="presentation"
-        class="absolute rotate-180 top-0 block inset-x-0 w-full object-cover object-bottom"
+        class="absolute rotate-180 -top-px block inset-x-0 w-full object-cover object-bottom"
         alt=""
       />
       <div class="container px-8 relative z-10">
@@ -1087,7 +1187,7 @@
     <div class="fixed inset-e-6 top-[calc(50%+240px)] -translate-y-1/2 z-30">
       <a
         href="#"
-        class="bg-[#67C15E] size-14 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+        class="bg-[#67C15E] size-14 rounded-full flex-center hover:scale-110 transition-transform"
       >
         <img
           src="../../assets/images/shared/icons/whatsapp-float.svg"

@@ -37,14 +37,6 @@ h6 {
   font-family: "Ghanem";
 }
 
-/* Custom Utilities */
-.hero-overlay {
-  background: linear-gradient(
-    0deg,
-    rgba(1, 105, 56, 0.8),
-    rgba(1, 105, 56, 0.8)
-  );
-}
 @layer base {
   .iti {
     width: 100%;
@@ -62,13 +54,61 @@ h6 {
   .container {
     @apply px-4! mx-auto;
   }
+
+  button {
+    @apply cursor-pointer;
+  }
+  @media (max-width: 1023px) {
+    [data-hide-mobile] {
+      display: none !important;
+    }
+  }
+}
+@layer utilities {
+  .flex-center{
+    @apply flex items-center justify-center;
+  }
+  .main-font{
+    font-family: var(--main-font) !important;
+  }
+  .hero-overlay {
+    background: linear-gradient(
+      0deg,
+      rgba(1, 105, 56, 0.8),
+      rgba(1, 105, 56, 0.8)
+    );
+  }
   .section-content-visibility {
     content-visibility: auto;
     contain-intrinsic-size: 1000px;
   }
-  button {
-    @apply cursor-pointer;
+  .custom-scroll {
+    overflow: auto;
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary-dark) transparent;
   }
+
+  .custom-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-track {
+    background: transparent; /* مهم */
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 9999px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-dark);
+  }
+}
+@layer components {
   .header-line {
     @apply w-px h-[87px] bg-natural-100 rounded-full ml-4 hidden lg:block relative;
     &::after,
@@ -80,13 +120,6 @@ h6 {
     }
     &::after {
       @apply bottom-full;
-    }
-  }
-
-  /* Prevent CLS for JS-hidden elements */
-  @media (max-width: 1023px) {
-    [data-hide-mobile] {
-      display: none !important;
     }
   }
 }
