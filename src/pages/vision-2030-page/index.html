@@ -447,7 +447,7 @@
         </nav>
       </div>
     </header>
-    <section class="relative min-h-[640px] hero-bg-placeholder overflow-clip">
+    <section class="relative min-h-[764px] hero-bg-placeholder overflow-clip">
       <div class="absolute inset-0 hero-overlay z-10"></div>
       <img
         src="../../assets/images/home/hero-bg-image.webp"
@@ -461,25 +461,27 @@
         class="absolute inset-0 w-full h-full object-cover aspect-3/2"
       />
       <div
-        class="relative z-10 container justify-between px-8 pt-[180px] pb-14 flex flex-col-reverse lg:flex-row gap-[72px] items-center text-center lg:"
+        class="relative z-10 container justify-between px-8 pt-[180px] pb-20 flex flex-col-reverse lg:flex-row gap-[72px] items-center text-center lg:"
       >
         <div class="max-w-4xl space-y-6">
           <div class="flex justify-center lg:justify-end">
             <div>
               <div class="flex items-center gap-4">
                 <div class="header-line"></div>
-                <h1
-                  class="text-[60px] font-header font-medium text-natural-100 leading-tight tracking-[2.4px]"
-                >
-                  طلاب 2000 هم جيل - <br />
-                  شباب رؤية 2030
-                </h1>
+                <div>
+                  <h1
+                    class="text-[60px] font-header font-medium text-natural-100 leading-tight tracking-[2.4px]"
+                  >
+                    نبذه عنا
+                  </h1>
+                  <a
+                    href="../home-page/index.html"
+                    class="text-2xl font-main text-natural-100 uppercase tracking-[-0.6px]"
+                  >
+                    الرئيسية
+                  </a>
+                </div>
               </div>
-              <p
-                class="text-[30px] font-main text-natural-100 uppercase mt-4 tracking-[-0.6px]"
-              >
-                طلاب اليوم جيل المستقبل
-              </p>
             </div>
           </div>
         </div>
@@ -508,833 +510,102 @@
         data-hide-mobile
       />
     </section>
-    <!-- top blogs -->
     <section
-      class="py-16 section-content-visibility pb-[120px] overflow-hidden text-natural-100"
+      class="py-16 section-content-visibility bg-natural-100 relative overflow-hidden"
     >
-      <div class="container px-4 relative z-10">
+      <img
+        src="../../assets/images/vision-2030/visison-2030-bg.webp"
+        alt=""
+        role="presentation"
+        width="1440"
+        height="771"
+        decoding="async"
+        loading="lazy"
+        data-hide-mobile
+        class="absolute left-0 right-0 w-full top-1/2 -translate-y-1/2 size-full object-cover object-center pointer-events-none"
+      />
+      <div class="container px-8 relative z-10">
         <div
-          class="flex items-center mb-16"
-          data-animate
-          data-animation-direction="start"
+          class="grid grid-cols-1 lg:grid-cols-2 items-center gap-16 relative z-10"
         >
-          <div class="flex flex-col">
-            <div class="inline-flex items-center gap-2">
-              <div class="relative w-8 h-8 flex items-center justify-start">
+          <div data-animate data-animation-direction="start">
+            <div class="inline-flex items-center gap-2 mb-4">
+              <div class="relative w-8 h-8 flex-center">
                 <div class="absolute size-3.5 bg-primary rotate-45"></div>
                 <div
                   class="absolute size-2.5 bg-secondary rotate-45 transform -translate-x-2 top-1/2 -translate-y-1/2"
                 ></div>
               </div>
               <h2
-                class="text-4xl font-header font-medium text-natural-800 tracking-wider upper"
+                class="text-4xl font-header font-medium text-natural-800 tracking-wider"
               >
-                الأكثر قراءة
+                رؤيه مستقبلية من أجل التنمية
               </h2>
             </div>
-          </div>
-        </div>
 
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          data-animate
-          data-animation-direction="bottom"
-        >
-          <article class="card">
-            <a href="#" class="block z-10" itemprop="url">
-              <figure class="w-full h-[308px] rounded-t-3xl overflow-hidden">
-                <img
-                  src="../../assets/images/shared/blog-test.webp"
-                  width="411"
-                  height="308"
-                  class="block size-full object-cover object-center"
-                  alt="كلية الآداب جامعة القاهرة قسم اللغات والترجمة"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div
-                class="card-body p-4 bg-natural-100 rounded-3xl -mt-10 z-20 relative"
-              >
-                <div
-                  class="flex-center card-header gap-2.5 border-b border-natural-300 pb-2"
-                >
-                  <img
-                    src="../../assets/images/shared/icons/calendar-icon.svg"
-                    alt=""
-                    role="presentation"
-                    width="17"
-                    height="19"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <time
-                    datetime="2025-09-15"
-                    class="text-lg text-natural-800 leading-[43px]"
-                    >٢٢ ربيع الأول ١٤٤٧هـ</time
-                  >
-                </div>
-                <h3
-                  class="card-title line-clamp-2 my-4 text-2xl leading-[43px] text-natural-800 main-font"
-                >
-                  كلية الآداب جامعة القاهرة قسم اللغات والترجمة
-                </h3>
-                <div class="flex items-center gap-2">
-                  <span class="text-2xl text-secondary underline"
-                    >معرفة المزيد</span
-                  >
-                  <img
-                    src="../../assets/images/shared/icons/arrow-cta.svg"
-                    alt=""
-                    width="24"
-                    height="24"
-                    role="presentation"
-                    loading="lazy"
-                    decoding="async"
-                    class="rotate-45 ltr:-rotate-45"
-                  />
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="card">
-            <a href="#" class="block z-10" itemprop="url">
-              <figure class="w-full h-[308px] rounded-t-3xl overflow-hidden">
-                <img
-                  src="../../assets/images/shared/blog-test.webp"
-                  width="411"
-                  height="308"
-                  class="block size-full object-cover object-center"
-                  alt="كلية الآداب جامعة القاهرة قسم اللغات والترجمة"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div
-                class="card-body p-4 bg-natural-100 rounded-3xl -mt-10 z-20 relative"
-              >
-                <div
-                  class="flex-center card-header gap-2.5 border-b border-natural-300 pb-2"
-                >
-                  <img
-                    src="../../assets/images/shared/icons/calendar-icon.svg"
-                    alt=""
-                    role="presentation"
-                    width="17"
-                    height="19"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <time
-                    datetime="2025-09-15"
-                    class="text-lg text-natural-800 leading-[43px]"
-                    >٢٢ ربيع الأول ١٤٤٧هـ</time
-                  >
-                </div>
-                <h3
-                  class="card-title line-clamp-2 my-4 text-2xl leading-[43px] text-natural-800 main-font"
-                >
-                  كلية الآداب جامعة القاهرة قسم اللغات والترجمة
-                </h3>
-                <div class="flex items-center gap-2">
-                  <span class="text-2xl text-secondary underline"
-                    >معرفة المزيد</span
-                  >
-                  <img
-                    src="../../assets/images/shared/icons/arrow-cta.svg"
-                    alt=""
-                    width="24"
-                    height="24"
-                    role="presentation"
-                    loading="lazy"
-                    decoding="async"
-                    class="rotate-45 ltr:-rotate-45"
-                  />
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="card">
-            <a href="#" class="block z-10" itemprop="url">
-              <figure class="w-full h-[308px] rounded-t-3xl overflow-hidden">
-                <img
-                  src="../../assets/images/shared/blog-test.webp"
-                  width="411"
-                  height="308"
-                  class="block size-full object-cover object-center"
-                  alt="كلية الآداب جامعة القاهرة قسم اللغات والترجمة"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div
-                class="card-body p-4 bg-natural-100 rounded-3xl -mt-10 z-20 relative"
-              >
-                <div
-                  class="flex-center card-header gap-2.5 border-b border-natural-300 pb-2"
-                >
-                  <img
-                    src="../../assets/images/shared/icons/calendar-icon.svg"
-                    alt=""
-                    role="presentation"
-                    width="17"
-                    height="19"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <time
-                    datetime="2025-09-15"
-                    class="text-lg text-natural-800 leading-[43px]"
-                    >٢٢ ربيع الأول ١٤٤٧هـ</time
-                  >
-                </div>
-                <h3
-                  class="card-title line-clamp-2 my-4 text-2xl leading-[43px] text-natural-800 main-font"
-                >
-                  كلية الآداب جامعة القاهرة قسم اللغات والترجمة
-                </h3>
-                <div class="flex items-center gap-2">
-                  <span class="text-2xl text-secondary underline"
-                    >معرفة المزيد</span
-                  >
-                  <img
-                    src="../../assets/images/shared/icons/arrow-cta.svg"
-                    alt=""
-                    width="24"
-                    height="24"
-                    role="presentation"
-                    loading="lazy"
-                    decoding="async"
-                    class="rotate-45 ltr:-rotate-45"
-                  />
-                </div>
-              </div>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-    <!-- Browse articles -->
-    <section
-      class="py-16 section-content-visibility pb-[120px] mb-10 relative overflow-hidden text-natural-100"
-    >
-      <img
-        src="../../assets/images/home/study-outside-bg.webp"
-        width="1440"
-        height="960"
-        alt=""
-        loading="lazy"
-        decoding="async"
-        role="presentation"
-        class="absolute inset-0 size-full object-cover object-center"
-      />
-
-      <div class="container px-4 relative z-10">
-        <div
-          class="flex items-center justify-center mb-16"
-          data-animate
-          data-animation-direction="top"
-          data-animation-distance="50px"
-        >
-          <div class="flex flex-col text-center">
-            <div class="inline-flex items-center justify-center">
-              <div class="relative w-8 h-8 flex items-center justify-start">
-                <div class="absolute size-3.5 bg-green-600 rotate-45"></div>
-                <div
-                  class="absolute size-2.5 bg-secondary rotate-45 transform -translate-x-2 top-1/2 -translate-y-1/2"
-                ></div>
-              </div>
-              <h2
-                class="text-4xl font-header font-medium text-natural-100 tracking-wider"
-              >
-                تصفح المقالات
-              </h2>
-            </div>
             <p
-              class="text-2xl lg:text-[28px] text-center font-main text-natural-100/90 leading-relaxed"
+              class="text-[28px] font-main text-natural-700 leading-relaxed mb-12 overflow-y-auto custom-scroll"
+              style="max-height: 287px"
             >
-              اكتشف مئات المقالات التي تهمك
+              نقدّم دعمًا وإرشادًا متخصصًا في رحلتك التعليمية، مع متابعة دقيقة
+              وخدمات موثوقة تساعدك على التقديم بثقة والبدء في تجربة دراسية سلسة
+              وميسّرة
             </p>
           </div>
-        </div>
-
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          data-animate
-          data-animation-direction="bottom"
-          data-animation-distance="50px"
-        >
-          <article class="card">
-            <a href="#" class="block z-10" itemprop="url">
-              <figure class="w-full h-[308px] rounded-t-3xl overflow-hidden">
-                <img
-                  src="../../assets/images/shared/blog-test.webp"
-                  width="411"
-                  height="308"
-                  class="block size-full object-cover object-center"
-                  alt="كلية الآداب جامعة القاهرة قسم اللغات والترجمة"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div
-                class="card-body p-4 bg-natural-100 rounded-3xl -mt-10 z-20 relative"
-              >
-                <div
-                  class="flex-center card-header gap-2.5 border-b border-natural-300 pb-2"
-                >
-                  <img
-                    src="../../assets/images/shared/icons/calendar-icon.svg"
-                    alt=""
-                    role="presentation"
-                    width="17"
-                    height="19"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <time
-                    datetime="2025-09-15"
-                    class="text-lg text-natural-800 leading-[43px]"
-                    >٢٢ ربيع الأول ١٤٤٧هـ</time
-                  >
-                </div>
-                <h3
-                  class="card-title line-clamp-2 my-4 text-2xl leading-[43px] text-natural-800 main-font"
-                >
-                  كلية الآداب جامعة القاهرة قسم اللغات والترجمة
-                </h3>
-                <div class="flex items-center gap-2">
-                  <span class="text-2xl text-secondary underline"
-                    >معرفة المزيد</span
-                  >
-                  <img
-                    src="../../assets/images/shared/icons/arrow-cta.svg"
-                    alt=""
-                    width="24"
-                    height="24"
-                    role="presentation"
-                    loading="lazy"
-                    decoding="async"
-                    class="rotate-45 ltr:-rotate-45"
-                  />
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="card">
-            <a href="#" class="block z-10" itemprop="url">
-              <figure class="w-full h-[308px] rounded-t-3xl overflow-hidden">
-                <img
-                  src="../../assets/images/shared/blog-test.webp"
-                  width="411"
-                  height="308"
-                  class="block size-full object-cover object-center"
-                  alt="كلية الآداب جامعة القاهرة قسم اللغات والترجمة"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div
-                class="card-body p-4 bg-natural-100 rounded-3xl -mt-10 z-20 relative"
-              >
-                <div
-                  class="flex-center card-header gap-2.5 border-b border-natural-300 pb-2"
-                >
-                  <img
-                    src="../../assets/images/shared/icons/calendar-icon.svg"
-                    alt=""
-                    role="presentation"
-                    width="17"
-                    height="19"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <time
-                    datetime="2025-09-15"
-                    class="text-lg text-natural-800 leading-[43px]"
-                    >٢٢ ربيع الأول ١٤٤٧هـ</time
-                  >
-                </div>
-                <h3
-                  class="card-title line-clamp-2 my-4 text-2xl leading-[43px] text-natural-800 main-font"
-                >
-                  كلية الآداب جامعة القاهرة قسم اللغات والترجمة
-                </h3>
-                <div class="flex items-center gap-2">
-                  <span class="text-2xl text-secondary underline"
-                    >معرفة المزيد</span
-                  >
-                  <img
-                    src="../../assets/images/shared/icons/arrow-cta.svg"
-                    alt=""
-                    width="24"
-                    height="24"
-                    role="presentation"
-                    loading="lazy"
-                    decoding="async"
-                    class="rotate-45 ltr:-rotate-45"
-                  />
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="card">
-            <a href="#" class="block z-10" itemprop="url">
-              <figure class="w-full h-[308px] rounded-t-3xl overflow-hidden">
-                <img
-                  src="../../assets/images/shared/blog-test.webp"
-                  width="411"
-                  height="308"
-                  class="block size-full object-cover object-center"
-                  alt="كلية الآداب جامعة القاهرة قسم اللغات والترجمة"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div
-                class="card-body p-4 bg-natural-100 rounded-3xl -mt-10 z-20 relative"
-              >
-                <div
-                  class="flex-center card-header gap-2.5 border-b border-natural-300 pb-2"
-                >
-                  <img
-                    src="../../assets/images/shared/icons/calendar-icon.svg"
-                    alt=""
-                    role="presentation"
-                    width="17"
-                    height="19"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <time
-                    datetime="2025-09-15"
-                    class="text-lg text-natural-800 leading-[43px]"
-                    >٢٢ ربيع الأول ١٤٤٧هـ</time
-                  >
-                </div>
-                <h3
-                  class="card-title line-clamp-2 my-4 text-2xl leading-[43px] text-natural-800 main-font"
-                >
-                  كلية الآداب جامعة القاهرة قسم اللغات والترجمة
-                </h3>
-                <div class="flex items-center gap-2">
-                  <span class="text-2xl text-secondary underline"
-                    >معرفة المزيد</span
-                  >
-                  <img
-                    src="../../assets/images/shared/icons/arrow-cta.svg"
-                    alt=""
-                    width="24"
-                    height="24"
-                    role="presentation"
-                    loading="lazy"
-                    decoding="async"
-                    class="rotate-45 ltr:-rotate-45"
-                  />
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="card">
-            <a href="#" class="block z-10" itemprop="url">
-              <figure class="w-full h-[308px] rounded-t-3xl overflow-hidden">
-                <img
-                  src="../../assets/images/shared/blog-test.webp"
-                  width="411"
-                  height="308"
-                  class="block size-full object-cover object-center"
-                  alt="كلية الآداب جامعة القاهرة قسم اللغات والترجمة"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div
-                class="card-body p-4 bg-natural-100 rounded-3xl -mt-10 z-20 relative"
-              >
-                <div
-                  class="flex-center card-header gap-2.5 border-b border-natural-300 pb-2"
-                >
-                  <img
-                    src="../../assets/images/shared/icons/calendar-icon.svg"
-                    alt=""
-                    role="presentation"
-                    width="17"
-                    height="19"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <time
-                    datetime="2025-09-15"
-                    class="text-lg text-natural-800 leading-[43px]"
-                    >٢٢ ربيع الأول ١٤٤٧هـ</time
-                  >
-                </div>
-                <h3
-                  class="card-title line-clamp-2 my-4 text-2xl leading-[43px] text-natural-800 main-font"
-                >
-                  كلية الآداب جامعة القاهرة قسم اللغات والترجمة
-                </h3>
-                <div class="flex items-center gap-2">
-                  <span class="text-2xl text-secondary underline"
-                    >معرفة المزيد</span
-                  >
-                  <img
-                    src="../../assets/images/shared/icons/arrow-cta.svg"
-                    alt=""
-                    width="24"
-                    height="24"
-                    role="presentation"
-                    loading="lazy"
-                    decoding="async"
-                    class="rotate-45 ltr:-rotate-45"
-                  />
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="card">
-            <a href="#" class="block z-10" itemprop="url">
-              <figure class="w-full h-[308px] rounded-t-3xl overflow-hidden">
-                <img
-                  src="../../assets/images/shared/blog-test.webp"
-                  width="411"
-                  height="308"
-                  class="block size-full object-cover object-center"
-                  alt="كلية الآداب جامعة القاهرة قسم اللغات والترجمة"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div
-                class="card-body p-4 bg-natural-100 rounded-3xl -mt-10 z-20 relative"
-              >
-                <div
-                  class="flex-center card-header gap-2.5 border-b border-natural-300 pb-2"
-                >
-                  <img
-                    src="../../assets/images/shared/icons/calendar-icon.svg"
-                    alt=""
-                    role="presentation"
-                    width="17"
-                    height="19"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <time
-                    datetime="2025-09-15"
-                    class="text-lg text-natural-800 leading-[43px]"
-                    >٢٢ ربيع الأول ١٤٤٧هـ</time
-                  >
-                </div>
-                <h3
-                  class="card-title line-clamp-2 my-4 text-2xl leading-[43px] text-natural-800 main-font"
-                >
-                  كلية الآداب جامعة القاهرة قسم اللغات والترجمة
-                </h3>
-                <div class="flex items-center gap-2">
-                  <span class="text-2xl text-secondary underline"
-                    >معرفة المزيد</span
-                  >
-                  <img
-                    src="../../assets/images/shared/icons/arrow-cta.svg"
-                    alt=""
-                    width="24"
-                    height="24"
-                    role="presentation"
-                    loading="lazy"
-                    decoding="async"
-                    class="rotate-45 ltr:-rotate-45"
-                  />
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="card">
-            <a href="#" class="block z-10" itemprop="url">
-              <figure class="w-full h-[308px] rounded-t-3xl overflow-hidden">
-                <img
-                  src="../../assets/images/shared/blog-test.webp"
-                  width="411"
-                  height="308"
-                  class="block size-full object-cover object-center"
-                  alt="كلية الآداب جامعة القاهرة قسم اللغات والترجمة"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div
-                class="card-body p-4 bg-natural-100 rounded-3xl -mt-10 z-20 relative"
-              >
-                <div
-                  class="flex-center card-header gap-2.5 border-b border-natural-300 pb-2"
-                >
-                  <img
-                    src="../../assets/images/shared/icons/calendar-icon.svg"
-                    alt=""
-                    role="presentation"
-                    width="17"
-                    height="19"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <time
-                    datetime="2025-09-15"
-                    class="text-lg text-natural-800 leading-[43px]"
-                    >٢٢ ربيع الأول ١٤٤٧هـ</time
-                  >
-                </div>
-                <h3
-                  class="card-title line-clamp-2 my-4 text-2xl leading-[43px] text-natural-800 main-font"
-                >
-                  كلية الآداب جامعة القاهرة قسم اللغات والترجمة
-                </h3>
-                <div class="flex items-center gap-2">
-                  <span class="text-2xl text-secondary underline"
-                    >معرفة المزيد</span
-                  >
-                  <img
-                    src="../../assets/images/shared/icons/arrow-cta.svg"
-                    alt=""
-                    width="24"
-                    height="24"
-                    role="presentation"
-                    loading="lazy"
-                    decoding="async"
-                    class="rotate-45 ltr:-rotate-45"
-                  />
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="card">
-            <a href="#" class="block z-10" itemprop="url">
-              <figure class="w-full h-[308px] rounded-t-3xl overflow-hidden">
-                <img
-                  src="../../assets/images/shared/blog-test.webp"
-                  width="411"
-                  height="308"
-                  class="block size-full object-cover object-center"
-                  alt="كلية الآداب جامعة القاهرة قسم اللغات والترجمة"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div
-                class="card-body p-4 bg-natural-100 rounded-3xl -mt-10 z-20 relative"
-              >
-                <div
-                  class="flex-center card-header gap-2.5 border-b border-natural-300 pb-2"
-                >
-                  <img
-                    src="../../assets/images/shared/icons/calendar-icon.svg"
-                    alt=""
-                    role="presentation"
-                    width="17"
-                    height="19"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <time
-                    datetime="2025-09-15"
-                    class="text-lg text-natural-800 leading-[43px]"
-                    >٢٢ ربيع الأول ١٤٤٧هـ</time
-                  >
-                </div>
-                <h3
-                  class="card-title line-clamp-2 my-4 text-2xl leading-[43px] text-natural-800 main-font"
-                >
-                  كلية الآداب جامعة القاهرة قسم اللغات والترجمة
-                </h3>
-                <div class="flex items-center gap-2">
-                  <span class="text-2xl text-secondary underline"
-                    >معرفة المزيد</span
-                  >
-                  <img
-                    src="../../assets/images/shared/icons/arrow-cta.svg"
-                    alt=""
-                    width="24"
-                    height="24"
-                    role="presentation"
-                    loading="lazy"
-                    decoding="async"
-                    class="rotate-45 ltr:-rotate-45"
-                  />
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="card">
-            <a href="#" class="block z-10" itemprop="url">
-              <figure class="w-full h-[308px] rounded-t-3xl overflow-hidden">
-                <img
-                  src="../../assets/images/shared/blog-test.webp"
-                  width="411"
-                  height="308"
-                  class="block size-full object-cover object-center"
-                  alt="كلية الآداب جامعة القاهرة قسم اللغات والترجمة"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div
-                class="card-body p-4 bg-natural-100 rounded-3xl -mt-10 z-20 relative"
-              >
-                <div
-                  class="flex-center card-header gap-2.5 border-b border-natural-300 pb-2"
-                >
-                  <img
-                    src="../../assets/images/shared/icons/calendar-icon.svg"
-                    alt=""
-                    role="presentation"
-                    width="17"
-                    height="19"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <time
-                    datetime="2025-09-15"
-                    class="text-lg text-natural-800 leading-[43px]"
-                    >٢٢ ربيع الأول ١٤٤٧هـ</time
-                  >
-                </div>
-                <h3
-                  class="card-title line-clamp-2 my-4 text-2xl leading-[43px] text-natural-800 main-font"
-                >
-                  كلية الآداب جامعة القاهرة قسم اللغات والترجمة
-                </h3>
-                <div class="flex items-center gap-2">
-                  <span class="text-2xl text-secondary underline"
-                    >معرفة المزيد</span
-                  >
-                  <img
-                    src="../../assets/images/shared/icons/arrow-cta.svg"
-                    alt=""
-                    width="24"
-                    height="24"
-                    role="presentation"
-                    loading="lazy"
-                    decoding="async"
-                    class="rotate-45 ltr:-rotate-45"
-                  />
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="card">
-            <a href="#" class="block z-10" itemprop="url">
-              <figure class="w-full h-[308px] rounded-t-3xl overflow-hidden">
-                <img
-                  src="../../assets/images/shared/blog-test.webp"
-                  width="411"
-                  height="308"
-                  class="block size-full object-cover object-center"
-                  alt="كلية الآداب جامعة القاهرة قسم اللغات والترجمة"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div
-                class="card-body p-4 bg-natural-100 rounded-3xl -mt-10 z-20 relative"
-              >
-                <div
-                  class="flex-center card-header gap-2.5 border-b border-natural-300 pb-2"
-                >
-                  <img
-                    src="../../assets/images/shared/icons/calendar-icon.svg"
-                    alt=""
-                    role="presentation"
-                    width="17"
-                    height="19"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <time
-                    datetime="2025-09-15"
-                    class="text-lg text-natural-800 leading-[43px]"
-                    >٢٢ ربيع الأول ١٤٤٧هـ</time
-                  >
-                </div>
-                <h3
-                  class="card-title line-clamp-2 my-4 text-2xl leading-[43px] text-natural-800 main-font"
-                >
-                  كلية الآداب جامعة القاهرة قسم اللغات والترجمة
-                </h3>
-                <div class="flex items-center gap-2">
-                  <span class="text-2xl text-secondary underline"
-                    >معرفة المزيد</span
-                  >
-                  <img
-                    src="../../assets/images/shared/icons/arrow-cta.svg"
-                    alt=""
-                    width="24"
-                    height="24"
-                    role="presentation"
-                    loading="lazy"
-                    decoding="async"
-                    class="rotate-45 ltr:-rotate-45"
-                  />
-                </div>
-              </div>
-            </a>
-          </article>
-        </div>
-        <div class="flex justify-center items-center gap-4 mt-8">
-          <a
-            href="#"
-            rel="prev"
-            class="w-12 h-12 rounded-lg flex-center bg-orange-400 cursor-not-allowed"
-            aria-label="السابق"
-            disabled
-            tabindex="-1"
-            aria-disabled="true"
-          >
-            <img
-              src="../../assets/images/shared/icons/double-arrow-left.svg"
-              width="24"
-              height="24"
-              alt=""
-              role="presentation"
-              loading="lazy"
-              decoding="async"
-              class="rtl:rotate-180 pointer-events-none"
-            />
-          </a>
-          <div class="text-2xl" aria-live="polite" aria-atomic="true">
-            <span>9</span>
-            <span>من</span>
-            <span>230</span>
+          <div class="relative" data-animate data-animation-direction="end">
+            <div>
+              <img
+                src="../../assets/images/vision-2030/vision-2030-image.webp"
+                alt="Students"ً
+                class="object-cover"
+                width="1273"
+                loading="lazy"
+                decoding="async"
+                height="1158"
+              />
+            </div>
           </div>
-          <a
-            href="#"
-            rel="next"
-            class="w-12 h-12 bg-secondary rounded-lg flex-center hover:bg-secondary/90 hover:scale-105 disabled:bg-orange-400"
-            aria-label="التالي"
-            tabindex="0"
-            aria-disabled="false"
+        </div>
+        <div class="space-y-20" data-animate data-animation-direction="bottom">
+          <p
+            class="text-[28px] font-main text-natural-700 leading-relaxed mb-12 overflow-y-auto custom-scroll"
+            style="max-height: 287px"
           >
-            <img
-              src="../../assets/images/shared/icons/double-arrow-left.svg"
-              width="24"
-              height="24"
-              alt=""
-              role="presentation"
-              loading="lazy"
-              decoding="async"
-              class="ltr:-scale-x-100 brightness-0 invert pointer-events-none transition-all group-[.swiper-button-disabled]:invert-0"
-            />
-          </a>
+            بدعم ورعاية خادم الحرمين الشريفين، حفظه الله، وولي العهد، الأمير
+            محمد بن سلمان، أُطلقت المملكة رؤيتها المستقبلية 2023 لاقتصاد أفضل
+            سعيًا لاستخدام الموارد الطبيعية واستغلال الموارد البشرية التي أنعم
+            الله بها علي هذه الارض فضلًا عن الموقع الاستراتيجي المتميز وتسخير كل
+            الإمكانات الممكنة لتمكين المملكة من أن تكون قوة استثمارية رائدة ذات
+            عمق عربيّ وإسلاميّ.
+          </p>
+          <p
+            class="text-[28px] font-main text-natural-700 leading-relaxed mb-12 overflow-y-auto custom-scroll"
+            style="max-height: 287px"
+          >
+            وخلال الخمس سنوات الماضية، استطاعت قيادة المملكة الحكيمة بأيدي أن
+            تحقق الكثير من الإنجازات والنتائج الملموسة على عدة أصعدة شملت العمل
+            الحكومي والاقتصاد والمجتمع، كما وأرست أسس النجاح للمستقبل وإنشاء
+            عددًا من القطاعات الخاصة الجديدة، وفتحت أبوابها للعالم من أجل
+            الاستثمار ما ينعكس على جودة حياة المواطنين.
+          </p>
+          <p
+            class="text-[28px] font-main text-natural-700 leading-relaxed mb-12 overflow-y-auto custom-scroll"
+            style="max-height: 287px"
+          >
+            وتماشيًا مع رؤية المملكة 2023 لتمكين المواطنين في شتى القطاعات
+            والتخصصات والاستفادة بأقصى قدر من قدراتهم لخلق فرص مبتكرة لمستقبل
+            أفضل، يسعى خبراء التعليم من خلال موقعنا إلى توفير الفرص التعليمة
+            لجميع الطلاب الراغبين في دراسة التخصصات النادرة أو الأكثر توافقًا مع
+            توجه المملكة، فضلًا عن توفير الإرشاد الأكاديمي والرد على كل
+            الاستفسارات التعليمية، وعرض الأنظمة التعليمية داخل المملكة وخارجها
+            وتوفير بيئة تعليمية ملائمه لاحتياجات السوق ولرؤيه 2030 والوظائف التي
+            تحتاجها حاليًا أو في المستقبل، وبجانب ذلك توفير فرص وأفكار استثمارية
+            لرواد الأعمال داخل السعوديه وللشركات المختلفة.
+          </p>
         </div>
       </div>
-
-      <img
-        src="../../assets/images/shared/section-bottom-vector.webp"
-        loading="lazy"
-        decoding="async"
-        role="presentation"
-        class="absolute bottom-0 inset-x-0 w-full object-cover object-bottom translate-y-[2px]"
-        alt=""
-      />
     </section>
+
     <footer
       data-animate
       data-animation-direction="bottom"
@@ -1818,5 +1089,6 @@
 
     <script src="../../assets/js/main.js" defer></script>
     <script src="../../assets/js/mobile-optmizer.js" defer></script>
+    <script src="../../assets/js/home.js" defer></script>
   </body>
 </html>

@@ -8,14 +8,15 @@
   --color-primary: #016938; /* Green/500 */
   --color-primary-dark: #004525; /* Green/600 */
   --color-secondary: #f17c2d; /* Orange/500 */
+  --color-green-200: #f6f9f5; /* Neutral Colors */
   --color-green-300: #e4eae1; /* Neutral Colors */
   --color-green-400: #c5d7bd; /* Neutral Colors */
   --color-green-600: #004525; /* Neutral Colors */
   --color-natural-100: #ffffff;
   --color-natural-300: #f4f4f4;
-  --color-natural-400: #CECECE;
+  --color-natural-400: #cecece;
   --color-natural-500: #8d8d8d;
-  --color-natural-600: #5D5D5D;
+  --color-natural-600: #5d5d5d;
   --color-natural-700: #323232;
   --color-natural-800: #0e0e0e;
   --color-orange-300: #fef7f2;
@@ -51,6 +52,23 @@ h6 {
       @media screen and (min-width: 1280px) {
         width: 576px;
       }
+    }
+    #phoneInput {
+      text-align: end;
+      padding-inline-end: 24px !important;
+    }
+  }
+  .iti--separate-dial-code .iti__selected-flag {
+    background-color: transparent !important;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -12px;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 20px;
+      background-color: var(--color-natural-300);
     }
   }
   .container {
