@@ -10,8 +10,6 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
     <link
       rel="preload"
       href="../../assets/images/home/hero-image.webp"
@@ -19,18 +17,6 @@
       fetchpriority="high"
       type="image/webp"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css"
-      media="print"
-      onload="this.media = 'all'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css"
-      />
-    </noscript>
     <style>
       .hero-bg-placeholder {
         background-color: #016938;
@@ -42,6 +28,82 @@
       }
       .hero-overlay {
         background: linear-gradient(#016938cc, #016938cc);
+      }
+      /* FAQ Accordion */
+      .faq-body {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 300ms ease-out;
+      }
+      [data-open] .faq-body {
+        grid-template-rows: 1fr;
+      }
+      .faq-body > div {
+        overflow: hidden;
+      }
+      .faq-icon {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+      }
+      .faq-icon::before,
+      .faq-icon::after {
+        content: "";
+        position: absolute;
+        background-color: var(--color-primary);
+        border-radius: 2px;
+        transition:
+          transform 300ms ease-out,
+          background-color 300ms ease-out;
+      }
+      .faq-icon::before {
+        width: 100%;
+        height: 2.5px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+      .faq-icon::after {
+        width: 2.5px;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+      }
+      [data-open] .faq-icon::after {
+        transform: translateX(-50%) scaleY(0);
+        background-color: var(--color-secondary);
+      }
+      [data-open] .faq-icon::before {
+        background-color: var(--color-secondary);
+      }
+
+      /* Tabs Animation */
+      #occasions-tabs-section .relative {
+        min-height: 320px; /* Prevent layout shift */
+      }
+      .tab-transitioning {
+        transition:
+          opacity 0.4s ease,
+          transform 0.4s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 5;
+      }
+      
+      .tab-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        position: relative;
+        z-index: 10;
+      }
+      [data-tab-content] {
+        opacity: 0;
+        transform: translateY(10px);
       }
     </style>
     <link
@@ -95,7 +157,9 @@
               >
             </li>
             <li>
-              <a href="#" class="hover:text-natural-100/70 transition-colors"
+              <a
+                href="../vision-2030-page/index.html"
+                class="hover:text-natural-100/70 transition-colors"
                 >رؤية 2030</a
               >
             </li>
@@ -138,12 +202,16 @@
               >
             </li>
             <li>
-              <a href="#" class="hover:text-natural-100/70 transition-colors"
+              <a
+                href="../gallery-page/index.html"
+                class="hover:text-natural-100/70 transition-colors"
                 >المعرض</a
               >
             </li>
             <li>
-              <a href="#" class="hover:text-natural-100/70 transition-colors"
+              <a
+                href="../certificates-page/index.html"
+                class="hover:text-natural-100/70 transition-colors"
                 >شهادات القبول</a
               >
             </li>
@@ -479,25 +547,27 @@
         class="absolute inset-0 w-full h-full object-cover aspect-3/2"
       />
       <div
-        class="relative z-10 container justify-between px-8 pt-[180px] pb-20 flex flex-col-reverse lg:flex-row gap-[72px] items-center text-center lg:"
+        class="relative z-10 container justify-between px-8 pt-[180px] pb-20 flex flex-col-reverse lg:flex-row gap-[72px] items-center"
       >
         <div class="max-w-4xl space-y-6">
           <div class="flex justify-center lg:justify-end">
             <div>
               <div class="flex items-center gap-4">
                 <div class="header-line"></div>
-                <h1
-                  class="text-[60px] font-header font-medium text-natural-100 leading-tight tracking-[2.4px]"
-                >
-                  طلاب 2000 هم جيل - <br />
-                  شباب رؤية 2030
-                </h1>
+                <div>
+                  <h1
+                    class="text-[60px] font-header font-medium text-natural-100 leading-tight tracking-[2.4px]"
+                  >
+                    احصل على نصيحة
+                  </h1>
+                  <a
+                    href="#"
+                    class="text-[30px] font-main text-natural-100 uppercase mt-4 tracking-[-0.6px]"
+                  >
+                    الرئيسيه
+                  </a>
+                </div>
               </div>
-              <p
-                class="text-[30px] font-main text-natural-100 uppercase mt-4 tracking-[-0.6px]"
-              >
-                طلاب اليوم جيل المستقبل
-              </p>
             </div>
           </div>
         </div>
@@ -526,294 +596,220 @@
         data-hide-mobile
       />
     </section>
+
+    <!-- Occasions Tabs Section -->
     <section
-      class="section-content-visibility py-16 bg-natural-100 relative overflow-hidden container"
+      id="occasions-tabs-section"
+      class="py-20 bg-natural-100 overflow-hidden"
     >
-      <div class="flex flex-col mb-10">
-        <div class="inline-flex items-center gap-2">
+      <div class="container px-4 lg:px-8">
+        <!-- Section Header -->
+        <div class="flex items-center gap-3 justify-end mb-12">
+          <h2
+            class="text-3xl lg:text-4xl font-header font-bold text-natural-800"
+          >
+            المناسبات الرسمية حسب التقويم الهجري
+          </h2>
           <div class="relative w-8 h-8 flex items-center justify-start">
             <div class="absolute size-3.5 bg-primary rotate-45"></div>
             <div
               class="absolute size-2.5 bg-secondary rotate-45 transform -translate-x-2 top-1/2 -translate-y-1/2"
             ></div>
           </div>
-          <h2
-            class="text-4xl font-header font-medium text-natural-800 tracking-wider upper"
-          >
-            نبذة عن الدورة
-          </h2>
         </div>
-      </div>
-      <div>
-        <p class="text-natural-700 text-[28px]">
-          يعد الحصول على قبول جامعي في إحدى الجامعات المرموقة هدفًا طموحًا
-          للكثير من الطلاب. إذا كنت تسعى للدراسة في جامعة تتسم بالجودة والتميز،
-          فإن دورات تحضير القبول الجامعي تأتي لتقديم المساعدة التي تحتاجها
-          لتحقيق هذا الهدف. تعرَّف في هذا المقال على أهمية هذه الدورات وكيف يمكن
-          أن تساهم في رحلتك نحو القبول الجامعي المرغوب.
-        </p>
-      </div>
-    </section>
-    <!-- Contact Us Section -->
-    <section
-      class="section-content-visibility py-[128px] bg-natural-100 relative overflow-hidden"
-      id="contact-section"
-    >
-      <img
-        src="../../assets/images/shared/music-tools-bg.webp"
-        width="1440"
-        height="960"
-        alt=""
-        loading="lazy"
-        decoding="async"
-        role="presentation"
-        class="absolute inset-0 size-full object-cover object-center opacity-3"
-      />
 
-      <div class="container px-4 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Months Navigation -->
+        <div class="flex flex-wrap gap-4 mb-16">
+          <button
+            data-tab-target="#muharram"
+            class="px-6 py-3.5 rounded-2xl text-natural-600 border border-natural-300 text-[22px] hover:border-secondary transition-all active-tab [&.active-tab]:bg-secondary [&.active-tab]:text-natural-100"
+          >
+            محرم
+          </button>
+          <button
+            data-tab-target="#safar"
+            class="px-6 py-3.5 rounded-2xl text-natural-600 border border-natural-300 bg-white text-[22px] hover:border-secondary transition-all [&.active-tab]:bg-secondary [&.active-tab]:text-natural-100"
+          >
+            صفر
+          </button>
+          <button
+            data-tab-target="#rabi-1"
+            class="px-6 py-3.5 rounded-2xl text-natural-600 border border-natural-300 bg-white text-[22px] hover:border-secondary transition-all [&.active-tab]:bg-secondary [&.active-tab]:text-natural-100"
+          >
+            ربيع الأول
+          </button>
+          <button
+            data-tab-target="#rabi-2"
+            class="px-6 py-3.5 rounded-2xl text-natural-600 border border-natural-300 bg-white text-[22px] hover:border-secondary transition-all [&.active-tab]:bg-secondary [&.active-tab]:text-natural-100"
+          >
+            ربيع الآخر
+          </button>
+          <button
+            data-tab-target="#jumada-1"
+            class="px-6 py-3.5 rounded-2xl text-natural-600 border border-natural-300 bg-white text-[22px] hover:border-secondary transition-all [&.active-tab]:bg-secondary [&.active-tab]:text-natural-100"
+          >
+            جمادى الأولى
+          </button>
+          <button
+            data-tab-target="#jumada-2"
+            class="px-6 py-3.5 rounded-2xl text-natural-600 border border-natural-300 bg-white text-[22px] hover:border-secondary transition-all [&.active-tab]:bg-secondary [&.active-tab]:text-natural-100"
+          >
+            جمادى الآخرة
+          </button>
+          <button
+            data-tab-target="#rajab"
+            class="px-6 py-3.5 rounded-2xl text-natural-600 border border-natural-300 bg-white text-[22px] hover:border-secondary transition-all [&.active-tab]:bg-secondary [&.active-tab]:text-natural-100"
+          >
+            رجب
+          </button>
+          <button
+            data-tab-target="#shaban"
+            class="px-6 py-3.5 rounded-2xl text-natural-600 border border-natural-300 bg-white text-[22px] hover:border-secondary transition-all [&.active-tab]:bg-secondary [&.active-tab]:text-natural-100"
+          >
+            شعبان
+          </button>
+          <button
+            data-tab-target="#ramadan"
+            class="px-6 py-3.5 rounded-2xl text-natural-600 border border-natural-300 bg-white text-[22px] hover:border-secondary transition-all [&.active-tab]:bg-secondary [&.active-tab]:text-natural-100"
+          >
+            رمضان
+          </button>
+          <button
+            data-tab-target="#shawwal"
+            class="px-6 py-3.5 rounded-2xl text-natural-600 border border-natural-300 bg-white text-[22px] hover:border-secondary transition-all [&.active-tab]:bg-secondary [&.active-tab]:text-natural-100"
+          >
+            شوال
+          </button>
+          <button
+            data-tab-target="#dhu-qada"
+            class="px-6 py-3.5 rounded-2xl text-natural-600 border border-natural-300 bg-white text-[22px] hover:border-secondary transition-all [&.active-tab]:bg-secondary [&.active-tab]:text-natural-100"
+          >
+            ذو القعدة
+          </button>
+          <button
+            data-tab-target="#dhu-hijja"
+            class="px-6 py-3.5 rounded-2xl text-natural-600 border border-natural-300 bg-white text-[22px] hover:border-secondary transition-all [&.active-tab]:bg-secondary [&.active-tab]:text-natural-100"
+          >
+            ذو الحجة
+          </button>
+        </div>
+
+        <!-- Tabs Content -->
+        <div class="relative">
+          <!-- Muharram -->
           <div
-            data-animate
-            data-animation-direction="start"
-            class="rounded-[40px] relative overflow-hidden text-natural-100 h-[513px] max-w-[548px]"
+            id="muharram"
+            data-tab-content
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            <div class="relative z-10 flex flex-col gap-12 h-full">
-              <div
-                class="size-full absolute inset-0 rounded-3xl overflow-hidden"
-              >
+            <div
+              class="bg-green-200 rounded-t-xl p-8 text-center flex flex-col items-center gap-4 transition-transform hover:scale-[1.02]"
+            >
+              <h3 class="text-2xl font-header font-bold text-natural-800">
+                رأس السنة الهجرية
+              </h3>
+              <div class="flex items-center gap-2 text-natural-600 font-main">
                 <img
-                  src="../../assets/images/course-details/image.png"
-                  alt="Contact Us"
-                  class="size-full object-cover object-top"
-                  loading="lazy"
-                  decoding="async"
+                  src="../../assets/images/shared/icons/calendar-icon.svg"
+                  width="20"
+                  height="20"
+                  alt="Calendar"
                 />
+                <span>1 محرم 1447 هـ</span>
               </div>
-              <div class="flex flex-col justify-end h-full p-6">
-                <div class="flex flex-col gap-2 z-20">
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-15">
-                      <div class="flex items-center gap-4">
-                        <img
-                          src="../../assets/images/shared/icons/phone-orange.svg"
-                          alt=""
-                          width="24"
-                          height="24"
-                          loading="lazy"
-                          decoding="async"
-                        />
-                        <span class="text-xl font-main">الهاتف</span>
-                      </div>
-                      <div
-                        class="header-line rotate-90 h-[72px] bg-primary before:bg-primary after:bg-primary"
-                      ></div>
-                    </div>
-                    <span
-                      dir="ltr"
-                      class="text-left text-[22px] font-medium font-main tracking-wider"
-                      >+966563618230</span
-                    >
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-18">
-                      <div class="flex items-center gap-4">
-                        <img
-                          src="../../assets/images/shared/icons/email-orange-icon.svg"
-                          alt=""
-                          width="24"
-                          height="24"
-                          loading="lazy"
-                          decoding="async"
-                        />
-                        <span class="text-xl font-main">البريد</span>
-                      </div>
-                      <div
-                        class="header-line rotate-90 h-[72px] bg-primary before:bg-primary after:bg-primary"
-                      ></div>
-                    </div>
-                    <span
-                      class="text-left text-[22px] font-medium font-main tracking-wider"
-                      >hello@ksa-students.com</span
-                    >
-                  </div>
-                </div>
-
-                <!-- Social Icons row -->
-                <div class="flex items-center gap-6 pt-4 z-10">
-                  <a
-                    href="#"
-                    aria-label="facebook"
-                    class="hover:scale-110 transition-transform"
-                  >
-                    <img
-                      src="../../assets/images/shared/icons/facebook-orange-icon.svg"
-                      width="32"
-                      height="32"
-                      loading="lazy"
-                      decoding="async"
-                      alt="facebook"
-                    />
-                  </a>
-                  <a
-                    href="#"
-                    aria-label="tiktok"
-                    class="hover:scale-110 transition-transform"
-                  >
-                    <img
-                      src="../../assets/images/shared/icons/tiktok-orange-icon.svg"
-                      width="32"
-                      height="32"
-                      loading="lazy"
-                      decoding="async"
-                      alt="tiktok"
-                    />
-                  </a>
-                  <a
-                    href="#"
-                    aria-label="linkedin"
-                    class="hover:scale-110 transition-transform"
-                  >
-                    <img
-                      src="../../assets/images/shared/icons/linkedin-orange-icon.svg"
-                      width="32"
-                      height="32"
-                      loading="lazy"
-                      decoding="async"
-                      alt="linkedin"
-                    />
-                  </a>
-                  <a
-                    href="#"
-                    aria-label="instagram"
-                    class="hover:scale-110 transition-transform"
-                  >
-                    <img
-                      src="../../assets/images/shared/icons/instagram-orange-icon.svg"
-                      width="32"
-                      height="32"
-                      loading="lazy"
-                      decoding="async"
-                      alt="instagram"
-                    />
-                  </a>
-                  <a
-                    href="#"
-                    aria-label="x"
-                    class="hover:scale-110 transition-transform"
-                  >
-                    <img
-                      src="../../assets/images/shared/icons/x-orange-icon.svg"
-                      width="32"
-                      height="32"
-                      loading="lazy"
-                      decoding="async"
-                      alt="x"
-                    />
-                  </a>
-                  <a
-                    href="#"
-                    aria-label="whatsapp"
-                    class="hover:scale-110 transition-transform"
-                  >
-                    <img
-                      src="../../assets/images/shared/icons/whatsapp-orange-icon.svg"
-                      width="32"
-                      height="32"
-                      loading="lazy"
-                      decoding="async"
-                      alt="whatsapp"
-                    />
-                  </a>
-                </div>
+            </div>
+            <div
+              class="bg-green-200 rounded-t-xl p-8 text-center flex flex-col items-center gap-4 transition-transform hover:scale-[1.02]"
+            >
+              <h3 class="text-2xl font-header font-bold text-natural-800">
+                يوم عاشوراء
+              </h3>
+              <div class="flex items-center gap-2 text-natural-600 font-main">
+                <img
+                  src="../../assets/images/shared/icons/calendar-icon.svg"
+                  width="20"
+                  height="20"
+                  alt="Calendar"
+                />
+                <span>10 محرم 1447 هـ</span>
               </div>
             </div>
           </div>
-          <div data-animate data-animation-direction="end">
-            <div class="flex flex-col mb-10">
-              <div class="inline-flex items-center gap-2">
-                <div class="relative w-8 h-8 flex items-center justify-start">
-                  <div class="absolute size-3.5 bg-primary rotate-45"></div>
-                  <div
-                    class="absolute size-2.5 bg-secondary rotate-45 transform -translate-x-2 top-1/2 -translate-y-1/2"
-                  ></div>
-                </div>
-                <h2
-                  class="text-4xl font-header font-medium text-natural-800 tracking-wider upper"
-                >
-                  قدم الآن
-                </h2>
+
+          <!-- Safar -->
+          <div
+            id="safar"
+            data-tab-content
+            class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            <div
+              class="bg-green-200 rounded-t-xl p-8 text-center flex flex-col items-center gap-4 transition-transform hover:scale-[1.02]"
+            >
+              <h3 class="text-2xl font-header font-bold text-natural-800">
+                مناسبة في شهر صفر
+              </h3>
+              <div class="flex items-center gap-2 text-natural-600 font-main">
+                <img
+                  src="../../assets/images/shared/icons/calendar-icon.svg"
+                  width="20"
+                  height="20"
+                  alt="Calendar"
+                />
+                <span>20 صفر 1447 هـ</span>
               </div>
             </div>
-            <form
-              id="contactForm"
-              class="flex [&_input]:placeholder:text-natural-500 flex-col gap-6 ltr:mr-auto rtl:ml-auto max-w-[617px]"
-            >
-              <!-- Name Input -->
-              <div class="form-group relative">
-                <input
-                  type="text"
-                  id="nameInput"
-                  placeholder="الاسم *"
-                  class="w-full bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
-                />
-                <div id="nameError" class="text-red-500 text-sm mt-1 hidden">
-                  <small class="hidden">الاسم يجب أن يكون أكثر من 3 حروف</small>
-                  <small class="hidden">الاسم لا يجب أن يحتوي على أرقام</small>
-                </div>
-              </div>
+          </div>
 
-              <!-- Phone Input -->
-              <div class="form-group relative">
-                <input
-                  type="tel"
-                  id="phoneInput"
-                  class="w-full bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
-                />
-                <input type="hidden" id="actualPhone" name="actualPhone" />
-                <div id="validMsg" class="text-red-500 text-sm mt-1 hidden">
-                  رقم الهاتف غير صالح
-                </div>
-              </div>
-
-              <!-- Email Input -->
-              <div class="form-group relative">
-                <input
-                  type="email"
-                  id="emailInput"
-                  placeholder="عنوان البريد الالكتروني *"
-                  class="w-full bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
-                />
-                <div id="emailError" class="text-red-500 text-sm mt-1 hidden">
-                  البريد الالكتروني غير صالح
-                </div>
-              </div>
-
-              <!-- Message Textarea -->
-              <div class="form-group relative">
-                <textarea
-                  id="message"
-                  placeholder="اكتب رسالتك هنا..."
-                  rows="5"
-                  class="w-full bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all resize-none"
-                ></textarea>
-                <div id="messageError" class="text-red-500 text-sm mt-1 hidden">
-                  الرسالة يجب أن تكون أكثر من 10 حروف
-                </div>
-              </div>
-
-              <!-- Submit Button -->
-              <button
-                type="submit"
-                class="bg-secondary text-white rounded-2xl py-3.5 text-[22px] font-header font-medium hover:bg-secondary/90 transition-color"
-              >
-                تواصل معنا
-              </button>
-            </form>
+          <!-- Add placeholders for other months to maintain structure -->
+          <div id="rabi-1" data-tab-content class="hidden">
+            <p class="text-center text-natural-500 py-10">
+              لا توجد مناسبات رسمية في هذا الشهر
+            </p>
+          </div>
+          <div id="rabi-2" data-tab-content class="hidden">
+            <p class="text-center text-natural-500 py-10">
+              لا توجد مناسبات رسمية في هذا الشهر
+            </p>
+          </div>
+          <div id="jumada-1" data-tab-content class="hidden">
+            <p class="text-center text-natural-500 py-10">
+              لا توجد مناسبات رسمية في هذا الشهر
+            </p>
+          </div>
+          <div id="jumada-2" data-tab-content class="hidden">
+            <p class="text-center text-natural-500 py-10">
+              لا توجد مناسبات رسمية في هذا الشهر
+            </p>
+          </div>
+          <div id="rajab" data-tab-content class="hidden">
+            <p class="text-center text-natural-500 py-10">
+              لا توجد مناسبات رسمية في هذا الشهر
+            </p>
+          </div>
+          <div id="shaban" data-tab-content class="hidden">
+            <p class="text-center text-natural-500 py-10">
+              لا توجد مناسبات رسمية في هذا الشهر
+            </p>
+          </div>
+          <div id="ramadan" data-tab-content class="hidden">
+            <p class="text-center text-natural-500 py-10">
+              بداية شهر رمضان المبارك
+            </p>
+          </div>
+          <div id="shawwal" data-tab-content class="hidden">
+            <p class="text-center text-natural-500 py-10">عيد الفطر السعيد</p>
+          </div>
+          <div id="dhu-qada" data-tab-content class="hidden">
+            <p class="text-center text-natural-500 py-10">
+              لا توجد مناسبات رسمية في هذا الشهر
+            </p>
+          </div>
+          <div id="dhu-hijja" data-tab-content class="hidden">
+            <p class="text-center text-natural-500 py-10">عيد الأضحى المبارك</p>
           </div>
         </div>
       </div>
     </section>
-
     <footer
       data-animate
       data-animation-direction="bottom"
@@ -1251,10 +1247,6 @@
 
     <script src="../../assets/js/main.js" defer></script>
     <script src="../../assets/js/mobile-optmizer.js" defer></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"
-      defer
-    ></script>
-    <script src="../../assets/js/home.js" defer></script>
+    <script src="../../assets/js/formal-occasions.js" defer></script>
   </body>
 </html>

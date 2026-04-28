@@ -582,7 +582,7 @@
                 class="size-full absolute inset-0 rounded-3xl overflow-hidden"
               >
                 <img
-                  src="../../assets/images/course-details/image.png"
+                  src="../../assets/images/get-advice/image.png"
                   alt="Contact Us"
                   class="size-full object-cover object-top"
                   loading="lazy"
@@ -754,7 +754,7 @@
                   type="text"
                   id="nameInput"
                   placeholder="الاسم *"
-                  class="w-full bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
+                  class="w-full bg-white border border-natural-300 rounded-lg py-4.5 px-3 text-xl font-main outline-none focus:border-secondary transition-all"
                 />
                 <div id="nameError" class="text-red-500 text-sm mt-1 hidden">
                   <small class="hidden">الاسم يجب أن يكون أكثر من 3 حروف</small>
@@ -767,7 +767,7 @@
                 <input
                   type="tel"
                   id="phoneInput"
-                  class="w-full bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
+                  class="w-full bg-white border border-natural-300 rounded-lg py-4.5 px-3 text-xl font-main outline-none focus:border-secondary transition-all"
                 />
                 <input type="hidden" id="actualPhone" name="actualPhone" />
                 <div id="validMsg" class="text-red-500 text-sm mt-1 hidden">
@@ -781,23 +781,69 @@
                   type="email"
                   id="emailInput"
                   placeholder="عنوان البريد الالكتروني *"
-                  class="w-full bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
+                  class="w-full bg-white border border-natural-300 rounded-lg py-4.5 px-3 text-xl font-main outline-none focus:border-secondary transition-all"
                 />
                 <div id="emailError" class="text-red-500 text-sm mt-1 hidden">
                   البريد الالكتروني غير صالح
                 </div>
               </div>
 
-              <!-- Message Textarea -->
+              <!-- Address Textarea -->
               <div class="form-group relative">
                 <textarea
                   id="message"
-                  placeholder="اكتب رسالتك هنا..."
-                  rows="5"
-                  class="w-full bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all resize-none"
+                  placeholder="العنوان"
+                  rows="3"
+                  class="w-full bg-white border border-natural-300 rounded-lg py-4.5 px-3 text-xl font-main outline-none focus:border-secondary transition-all resize-none"
                 ></textarea>
                 <div id="messageError" class="text-red-500 text-sm mt-1 hidden">
-                  الرسالة يجب أن تكون أكثر من 10 حروف
+                  يرجى إدخال العنوان
+                </div>
+              </div>
+
+              <div class="form-group relative">
+                <input
+                  type="file"
+                  id="cvUpload"
+                  accept=".pdf,.doc,.docx"
+                  class="hidden"
+                />
+                <div
+                  class="w-full bg-white border border-natural-300 rounded-2xl flex items-center cursor-pointer transition-all gap-4"
+                  id="cvUploadTrigger"
+                  role="button"
+                  tabindex="0"
+                >
+                  <div
+                    class="flex-center gap-2 text-natural-700 bg-natural-300 h-[52px] px-2 pe-[29px]"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.5 1.5V4.5C10.5 4.89782 10.658 5.27936 10.9393 5.56066C11.2206 5.84196 11.6022 6 12 6H15M9 9V13.5M9 9L11.25 11.25M9 9L6.75 11.25M11.25 1.5H4.5C4.10218 1.5 3.72064 1.65804 3.43934 1.93934C3.15804 2.22064 3 2.60218 3 3V15C3 15.3978 3.15804 15.7794 3.43934 16.0607C3.72064 16.342 4.10218 16.5 4.5 16.5H13.5C13.8978 16.5 14.2794 16.342 14.5607 16.0607C14.842 15.7794 15 15.3978 15 15V5.25L11.25 1.5Z"
+                        stroke="#8D8D8D"
+                        stroke-width="1.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="font-main text-natural-500"
+                      >تحميل السيرة الذاتية</span
+                    >
+                  </div>
+                  <span
+                    class="text-natural-500 text-sm font-main"
+                    id="cvFileName"
+                    >الحد الأقصى لحجم الملف 2 ميجابايت</span
+                  >
+                </div>
+                <div id="cvError" class="text-red-500 text-sm mt-1 hidden">
+                  حجم الملف يجب أن يكون أقل من 2 ميجابايت
                 </div>
               </div>
 
@@ -806,7 +852,7 @@
                 type="submit"
                 class="bg-secondary text-white rounded-2xl py-3.5 text-[22px] font-header font-medium hover:bg-secondary/90 transition-color"
               >
-                تواصل معنا
+                أرسل الآن
               </button>
             </form>
           </div>
@@ -1255,6 +1301,6 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"
       defer
     ></script>
-    <script src="../../assets/js/home.js" defer></script>
+    <script src="../../assets/js/become-consultant.js" defer></script>
   </body>
 </html>
