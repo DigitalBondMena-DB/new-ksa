@@ -244,7 +244,7 @@ function handleGlobalEvents() {
     window.addEventListener("resize", () => {
       (clearTimeout(e),
         (e = setTimeout(() => {
-          window.innerWidth >= 1280 && setSidenavState(!1);
+          window.innerWidth >= 1341 && setSidenavState(!1);
         }, 250)));
     }));
 }
