@@ -707,14 +707,21 @@
               id="contactForm"
               class="flex [&_input]:placeholder:text-natural-500 flex-col gap-6 ltr:mr-auto rtl:ml-auto max-w-[617px]"
             >
-              <!-- Name Input -->
+               <!-- Name Input -->
               <div class="form-group relative">
-                <input
-                  type="text"
-                  id="nameInput"
-                  placeholder="الاسم *"
-                  class="w-full bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
-                />
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="nameInput"
+                    placeholder=""
+                    class="w-full peer bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
+                  />
+                  <span
+                    class="absolute inset-s-6 peer-placeholder-shown:block hidden text-natural-500 top-1/2 -translate-y-1/2 pointer-events-none"
+                  >
+                    الاسم<span class="text-red-500">*</span>
+                  </span>
+                </div>
                 <div id="nameError" class="text-red-500 text-sm mt-1 hidden">
                   <small class="hidden">الاسم يجب أن يكون أكثر من 3 حروف</small>
                   <small class="hidden">الاسم لا يجب أن يحتوي على أرقام</small>
@@ -723,11 +730,19 @@
 
               <!-- Phone Input -->
               <div class="form-group relative">
-                <input
-                  type="tel"
-                  id="phoneInput"
-                  class="w-full bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
-                />
+                <div class="relative">
+                  <input
+                    type="tel"
+                    id="phoneInput"
+                    class="w-full placeholder:text-natural-800! bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
+                  />
+                  <label
+                    for="phoneInput"
+                    class="absolute text-sm inset-e-4 block bg-white text-natural-500 top-0 -translate-y-1/2 pointer-events-none"
+                  >
+                    رقم الهاتف<span class="text-red-500">*</span>
+                  </label>
+                </div>
                 <input type="hidden" id="actualPhone" name="actualPhone" />
                 <div id="validMsg" class="text-red-500 text-sm mt-1 hidden">
                   رقم الهاتف غير صالح
@@ -736,12 +751,20 @@
 
               <!-- Email Input -->
               <div class="form-group relative">
-                <input
-                  type="email"
-                  id="emailInput"
-                  placeholder="عنوان البريد الالكتروني *"
-                  class="w-full bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
-                />
+                <div class="relative">
+                  <input
+                    type="email"
+                    id="emailInput"
+                    placeholder=""
+                    class="w-full peer bg-white border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
+                  />
+                  <span
+                    class="absolute inset-s-6 peer-placeholder-shown:block hidden text-natural-500 top-1/2 -translate-y-1/2 pointer-events-none"
+                  >
+                    عنوان البريد الالكتروني <span class="text-red-500">*</span>
+                  </span>
+                </div>
+
                 <div id="emailError" class="text-red-500 text-sm mt-1 hidden">
                   البريد الالكتروني غير صالح
                 </div>
