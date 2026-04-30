@@ -14,13 +14,31 @@ function initBookConsultationForm() {
   const nationalityInput = document.getElementById("nationalityInput");
   const degreeInput = document.getElementById("degreeInput");
   const specializationInput = document.getElementById("specializationInput");
-  const gpaInput = document.getElementById("gpaInput");
 
   const countryError = document.getElementById("countryError");
   const nationalityError = document.getElementById("nationalityError");
   const degreeError = document.getElementById("degreeError");
   const specializationError = document.getElementById("specializationError");
+
+  // Conditional field containers
+  const conditionalContainer = document.getElementById("degreeConditionalFields");
+  const bachelorFields = document.getElementById("bachelorFields");
+  const masterFields = document.getElementById("masterFields");
+  const phdFields = document.getElementById("phdFields");
+
+  // Conditional inputs (now text inputs)
+  const branchInput = document.getElementById("branchInput");
+  const gpaInput = document.getElementById("gpaInput");
+  const bachelorSpecInput = document.getElementById("bachelorSpecInput");
+  const phdBachelorSpecInput = document.getElementById("phdBachelorSpecInput");
+  const masterSpecInput = document.getElementById("masterSpecInput");
+
+  // Conditional errors
+  const branchError = document.getElementById("branchError");
   const gpaError = document.getElementById("gpaError");
+  const bachelorSpecError = document.getElementById("bachelorSpecError");
+  const phdBachelorSpecError = document.getElementById("phdBachelorSpecError");
+  const masterSpecError = document.getElementById("masterSpecError");
 
   if (
     !nameInput ||
@@ -34,15 +52,16 @@ function initBookConsultationForm() {
     !nationalityInput ||
     !degreeInput ||
     !specializationInput ||
-    !gpaInput ||
     !countryError ||
     !nationalityError ||
     !degreeError ||
-    !specializationError ||
-    !gpaError
+    !specializationError
   ) {
     return;
   }
+
+  // Track current degree for validation
+  let currentDegree = "";
 
   let iti = null;
   const observer = new IntersectionObserver((entries) => {
@@ -124,11 +143,129 @@ function initBookConsultationForm() {
     return true;
   }
 
+  function validateTextInput(inputElement, errorElement, message) {
+    if (inputElement.value.trim() === "") {
+      errorElement.textContent = message;
+      errorElement.classList.remove("hidden");
+      return false;
+    }
+
+    errorElement.classList.add("hidden");
+    return true;
+  }
+
+  // ===== Degree Conditional Logic =====
+  function hideAllConditionalFields() {
+    bachelorFields.classList.add("hidden");
+    masterFields.classList.add("hidden");
+    phdFields.classList.add("hidden");
+  }
+
+  function resetConditionalInputs() {
+    // Reset all conditional input values
+    if (branchInput) branchInput.value = "";
+    if (gpaInput) gpaInput.value = "";
+    if (bachelorSpecInput) bachelorSpecInput.value = "";
+    if (phdBachelorSpecInput) phdBachelorSpecInput.value = "";
+    if (masterSpecInput) masterSpecInput.value = "";
+
+    // Hide all conditional errors
+    if (branchError) branchError.classList.add("hidden");
+    if (gpaError) gpaError.classList.add("hidden");
+    if (bachelorSpecError) bachelorSpecError.classList.add("hidden");
+    if (phdBachelorSpecError) phdBachelorSpecError.classList.add("hidden");
+    if (masterSpecError) masterSpecError.classList.add("hidden");
+  }
+
+  function showConditionalContainer() {
+    conditionalContainer.style.gridTemplateRows = "1fr";
+    conditionalContainer.style.opacity = "1";
+  }
+
+  function hideConditionalContainer() {
+    conditionalContainer.style.gridTemplateRows = "0fr";
+    conditionalContainer.style.opacity = "0";
+  }
+
+  function handleDegreeChange() {
+    const degree = degreeInput.value;
+    currentDegree = degree;
+
+    hideAllConditionalFields();
+    resetConditionalInputs();
+
+    if (!degree) {
+      hideConditionalContainer();
+      return;
+    }
+
+    // Show the appropriate fields based on degree
+    switch (degree) {
+      case "بكالوريوس":
+        bachelorFields.classList.remove("hidden");
+        break;
+      case "ماجستير":
+        masterFields.classList.remove("hidden");
+        break;
+      case "دكتوراه":
+        phdFields.classList.remove("hidden");
+        break;
+    }
+
+    // Animate container open
+    showConditionalContainer();
+  }
+
+  function validateConditionalFields() {
+    let isValid = true;
+
+    switch (currentDegree) {
+      case "بكالوريوس":
+        if (branchInput && branchError) {
+          if (!validateTextInput(branchInput, branchError, "الرجاء إدخال التشعيب الدراسي")) isValid = false;
+        }
+        if (gpaInput && gpaError) {
+          if (!validateTextInput(gpaInput, gpaError, "الرجاء إدخال المعدل الدراسي")) isValid = false;
+        }
+        break;
+
+      case "ماجستير":
+        if (bachelorSpecInput && bachelorSpecError) {
+          if (!validateTextInput(bachelorSpecInput, bachelorSpecError, "الرجاء إدخال تخصص البكالوريوس")) isValid = false;
+        }
+        break;
+
+      case "دكتوراه":
+        if (phdBachelorSpecInput && phdBachelorSpecError) {
+          if (!validateTextInput(phdBachelorSpecInput, phdBachelorSpecError, "الرجاء إدخال تخصص البكالوريوس")) isValid = false;
+        }
+        if (masterSpecInput && masterSpecError) {
+          if (!validateTextInput(masterSpecInput, masterSpecError, "الرجاء إدخال تخصص الماجستير")) isValid = false;
+        }
+        break;
+    }
+
+    return isValid;
+  }
+
+  // ===== Event Listeners =====
   observer.observe(phoneInput);
 
   phoneInput.addEventListener("input", function () {
     this.value = this.value.replace(/\D/g, "");
   });
+
+  // GPA: numbers only (digits and dot for decimals)
+  if (gpaInput) {
+    gpaInput.addEventListener("input", function () {
+      this.value = this.value.replace(/[^\d.]/g, "");
+      // Prevent multiple dots
+      const parts = this.value.split(".");
+      if (parts.length > 2) {
+        this.value = parts[0] + "." + parts.slice(1).join("");
+      }
+    });
+  }
 
   nameInput.addEventListener("input", validateName);
   emailInput.addEventListener("input", validateEmail);
@@ -136,27 +273,61 @@ function initBookConsultationForm() {
   phoneInput.addEventListener("blur", validatePhone);
 
   countryInput.addEventListener("change", () =>
-    validateSelect(countryInput, countryError, "الرجاء إدخال الدولة"),
-  );
-  countryInput.addEventListener("input", () =>
-    validateSelect(countryInput, countryError, "الرجاء إدخال الدولة"),
+    validateSelect(countryInput, countryError, "الرجاء اختيار الدولة"),
   );
   nationalityInput.addEventListener("change", () =>
     validateSelect(nationalityInput, nationalityError, "الرجاء اختيار الجنسية"),
   );
-  degreeInput.addEventListener("change", () =>
-    validateSelect(degreeInput, degreeError, "الرجاء اختيار الدرجة العلمية"),
-  );
-  specializationInput.addEventListener("change", () =>
-    validateSelect(
+  degreeInput.addEventListener("change", () => {
+    validateSelect(degreeInput, degreeError, "الرجاء اختيار الدرجة العلمية");
+    handleDegreeChange();
+  });
+  specializationInput.addEventListener("input", () =>
+    validateTextInput(
       specializationInput,
       specializationError,
-      "الرجاء اختيار التخصص الدراسي",
+      "الرجاء إدخال التخصص الدراسي",
     ),
   );
-  gpaInput.addEventListener("change", () =>
-    validateSelect(gpaInput, gpaError, "الرجاء اختيار المعدل الدراسي"),
-  );
+
+  // Conditional field input listeners
+  if (branchInput && branchError) {
+    branchInput.addEventListener("input", () =>
+      validateTextInput(branchInput, branchError, "الرجاء إدخال التشعيب الدراسي"),
+    );
+  }
+  if (gpaInput && gpaError) {
+    gpaInput.addEventListener("input", () =>
+      validateTextInput(gpaInput, gpaError, "الرجاء إدخال المعدل الدراسي"),
+    );
+  }
+  if (bachelorSpecInput && bachelorSpecError) {
+    bachelorSpecInput.addEventListener("input", () =>
+      validateTextInput(
+        bachelorSpecInput,
+        bachelorSpecError,
+        "الرجاء إدخال تخصص البكالوريوس",
+      ),
+    );
+  }
+  if (phdBachelorSpecInput && phdBachelorSpecError) {
+    phdBachelorSpecInput.addEventListener("input", () =>
+      validateTextInput(
+        phdBachelorSpecInput,
+        phdBachelorSpecError,
+        "الرجاء إدخال تخصص البكالوريوس",
+      ),
+    );
+  }
+  if (masterSpecInput && masterSpecError) {
+    masterSpecInput.addEventListener("input", () =>
+      validateTextInput(
+        masterSpecInput,
+        masterSpecError,
+        "الرجاء إدخال تخصص الماجستير",
+      ),
+    );
+  }
 
   form.addEventListener("submit", (event) => {
     const isNameValid = validateName();
@@ -165,7 +336,7 @@ function initBookConsultationForm() {
     const isCountryValid = validateSelect(
       countryInput,
       countryError,
-      "الرجاء إدخال الدولة",
+      "الرجاء اختيار الدولة",
     );
     const isNationalityValid = validateSelect(
       nationalityInput,
@@ -177,16 +348,12 @@ function initBookConsultationForm() {
       degreeError,
       "الرجاء اختيار الدرجة العلمية",
     );
-    const isSpecializationValid = validateSelect(
+    const isSpecializationValid = validateTextInput(
       specializationInput,
       specializationError,
-      "الرجاء اختيار التخصص الدراسي",
+      "الرجاء إدخال التخصص الدراسي",
     );
-    const isGpaValid = validateSelect(
-      gpaInput,
-      gpaError,
-      "الرجاء اختيار المعدل الدراسي",
-    );
+    const isConditionalValid = validateConditionalFields();
 
     if (
       isNameValid &&
@@ -196,7 +363,7 @@ function initBookConsultationForm() {
       isNationalityValid &&
       isDegreeValid &&
       isSpecializationValid &&
-      isGpaValid
+      isConditionalValid
     ) {
       const dialCode = iti ? iti.getSelectedCountryData().dialCode : "";
       actualPhone.value = dialCode ? "+" + dialCode + phoneInput.value.trim() : phoneInput.value.trim();

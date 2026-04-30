@@ -601,26 +601,51 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="form-group relative">
-                <input
-                  type="text"
-                  id="countryInput"
-                  placeholder="الدولة *"
-                  class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
-                />
+                <div class="relative">
+                  <select
+                    id="countryInput"
+                    class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 pe-12 text-xl font-main text-natural-600 outline-none focus:border-secondary transition-all appearance-none cursor-pointer"
+                  >
+                    <option value="">الدولة *</option>
+                    <option value="السعودية">السعودية</option>
+                    <option value="مصر">مصر</option>
+                    <option value="الإمارات">الإمارات</option>
+                    <option value="الكويت">الكويت</option>
+                    <option value="قطر">قطر</option>
+                    <option value="البحرين">البحرين</option>
+                    <option value="عمان">عمان</option>
+                    <option value="الأردن">الأردن</option>
+                    <option value="العراق">العراق</option>
+                    <option value="لبنان">لبنان</option>
+                    <option value="سوريا">سوريا</option>
+                    <option value="فلسطين">فلسطين</option>
+                    <option value="السودان">السودان</option>
+                    <option value="ليبيا">ليبيا</option>
+                    <option value="تونس">تونس</option>
+                    <option value="الجزائر">الجزائر</option>
+                    <option value="المغرب">المغرب</option>
+                    <option value="اليمن">اليمن</option>
+                    <option value="أخرى">أخرى</option>
+                  </select>
+                  <img src="../../assets/images/shared/icons/chevron-down.svg" width="20" height="20" alt="" role="presentation" class="absolute inset-e-5 top-1/2 -translate-y-1/2 pointer-events-none w-5 h-5" />
+                </div>
                 <div id="countryError" class="text-red-500 text-sm mt-1 hidden">
-                  الرجاء إدخال الدولة
+                  الرجاء اختيار الدولة
                 </div>
               </div>
               <div class="form-group relative">
-                <select
-                  id="nationalityInput"
-                  class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 text-xl font-main text-natural-600 outline-none focus:border-secondary transition-all appearance-none"
-                >
-                  <option value="">الجنسية *</option>
-                  <option value="سعودي">سعودي</option>
-                  <option value="مصري">مصري</option>
-                  <option value="أخرى">أخرى</option>
-                </select>
+                <div class="relative">
+                  <select
+                    id="nationalityInput"
+                    class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 pe-12 text-xl font-main text-natural-600 outline-none focus:border-secondary transition-all appearance-none cursor-pointer"
+                  >
+                    <option value="">الجنسية *</option>
+                    <option value="سعودي">سعودي</option>
+                    <option value="مصري">مصري</option>
+                    <option value="أخرى">أخرى</option>
+                  </select>
+                  <img src="../../assets/images/shared/icons/chevron-down.svg" width="20" height="20" alt="" role="presentation" class="absolute inset-e-5 top-1/2 -translate-y-1/2 pointer-events-none w-5 h-5" />
+                </div>
                 <div
                   id="nationalityError"
                   class="text-red-500 text-sm mt-1 hidden"
@@ -631,51 +656,116 @@
             </div>
 
             <div class="form-group relative">
-              <select
-                id="degreeInput"
-                class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 text-xl font-main text-natural-600 outline-none focus:border-secondary transition-all appearance-none"
-              >
-                <option value="">الدرجة العلمية *</option>
-                <option value="دبلوم">دبلوم</option>
-                <option value="بكالوريوس">بكالوريوس</option>
-                <option value="ماجستير">ماجستير</option>
-                <option value="دكتوراه">دكتوراه</option>
-              </select>
+              <div class="relative">
+                <select
+                  id="degreeInput"
+                  class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 pe-12 text-xl font-main text-natural-600 outline-none focus:border-secondary transition-all appearance-none cursor-pointer"
+                >
+                  <option value="">الدرجة العلمية *</option>
+                  <option value="بكالوريوس">بكالوريوس</option>
+                  <option value="ماجستير">ماجستير</option>
+                  <option value="دكتوراه">دكتوراه</option>
+                </select>
+                <img src="../../assets/images/shared/icons/chevron-down.svg" width="20" height="20" alt="" role="presentation" class="absolute inset-e-5 top-1/2 -translate-y-1/2 pointer-events-none w-5 h-5" />
+              </div>
               <div id="degreeError" class="text-red-500 text-sm mt-1 hidden">
                 الرجاء اختيار الدرجة العلمية
               </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="form-group relative">
-                <select
-                  id="specializationInput"
-                  class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 text-xl font-main text-natural-600 outline-none focus:border-secondary transition-all appearance-none"
-                >
-                  <option value="">التخصص الدراسي *</option>
-                  <option value="الطب">الطب</option>
-                  <option value="الهندسة">الهندسة</option>
-                  <option value="إدارة الأعمال">إدارة الأعمال</option>
-                </select>
-                <div
-                  id="specializationError"
-                  class="text-red-500 text-sm mt-1 hidden"
-                >
-                  الرجاء اختيار التخصص الدراسي
-                </div>
+            <!-- التخصص الدراسي - always visible -->
+            <div class="form-group relative">
+              <input
+                type="text"
+                id="specializationInput"
+                placeholder="التخصص الدراسي *"
+                class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
+              />
+              <div
+                id="specializationError"
+                class="text-red-500 text-sm mt-1 hidden"
+              >
+                الرجاء إدخال التخصص الدراسي
               </div>
-              <div class="form-group relative">
-                <select
-                  id="gpaInput"
-                  class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 text-xl font-main text-natural-600 outline-none focus:border-secondary transition-all appearance-none"
-                >
-                  <option value="">المعدل الدراسي *</option>
-                  <option value="ممتاز">ممتاز</option>
-                  <option value="جيد جدا">جيد جدا</option>
-                  <option value="جيد">جيد</option>
-                </select>
-                <div id="gpaError" class="text-red-500 text-sm mt-1 hidden">
-                  الرجاء اختيار المعدل الدراسي
+            </div>
+
+            <!-- Conditional fields container - uses grid for smooth no-shift transitions -->
+            <div id="degreeConditionalFields" class="grid transition-all duration-300" style="grid-template-rows: 0fr; opacity: 0;">
+              <div class="overflow-hidden">
+                <div class="flex flex-col gap-6">
+
+                  <!-- باكلوريوس fields: التشعيب الدراسي + المعدل الدراسي -->
+                  <div id="bachelorFields" class="hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div class="form-group relative">
+                        <input
+                          type="text"
+                          id="branchInput"
+                          placeholder="التشعيب الدراسي *"
+                          class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
+                        />
+                        <div id="branchError" class="text-red-500 text-sm mt-1 hidden">
+                          الرجاء إدخال التشعيب الدراسي
+                        </div>
+                      </div>
+                      <div class="form-group relative">
+                        <input
+                          type="text"
+                          id="gpaInput"
+                          inputmode="numeric"
+                          placeholder="المعدل الدراسي *"
+                          class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
+                        />
+                        <div id="gpaError" class="text-red-500 text-sm mt-1 hidden">
+                          الرجاء إدخال المعدل الدراسي
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ماجستير fields: تخصص البكالوريوس -->
+                  <div id="masterFields" class="hidden">
+                    <div class="form-group relative">
+                      <input
+                        type="text"
+                        id="bachelorSpecInput"
+                        placeholder="تخصص البكالوريوس *"
+                        class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
+                      />
+                      <div id="bachelorSpecError" class="text-red-500 text-sm mt-1 hidden">
+                        الرجاء إدخال تخصص البكالوريوس
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- دكتوراه fields: تخصص البكالوريوس + تخصص الماجستير -->
+                  <div id="phdFields" class="hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div class="form-group relative">
+                        <input
+                          type="text"
+                          id="phdBachelorSpecInput"
+                          placeholder="تخصص البكالوريوس *"
+                          class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
+                        />
+                        <div id="phdBachelorSpecError" class="text-red-500 text-sm mt-1 hidden">
+                          الرجاء إدخال تخصص البكالوريوس
+                        </div>
+                      </div>
+                      <div class="form-group relative">
+                        <input
+                          type="text"
+                          id="masterSpecInput"
+                          placeholder="تخصص الماجستير *"
+                          class="w-full bg-natural-100 border border-natural-300 rounded-2xl p-6 text-xl font-main outline-none focus:border-secondary transition-all"
+                        />
+                        <div id="masterSpecError" class="text-red-500 text-sm mt-1 hidden">
+                          الرجاء إدخال تخصص الماجستير
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
